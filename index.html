@@ -1,0 +1,1543 @@
+<!doctype html>
+<html lang="vi" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giáo Án Hóa Học</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    * { box-sizing: border-box; }
+    .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .font-body { font-family: 'Source Sans 3', sans-serif; }
+    .section-card {
+      background: #ffffff;
+      border-left: 4px solid #1a5632;
+      border-radius: 0 12px 12px 0;
+      transition: all 0.3s ease;
+    }
+    .section-card:hover {
+      transform: translateX(6px);
+      box-shadow: 0 8px 30px rgba(26,86,50,0.12);
+    }
+    .hero-pattern {
+      background-color: #0f3d1e;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(26,86,50,0.6) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(212,175,55,0.15) 0%, transparent 50%),
+        linear-gradient(180deg, #0f3d1e 0%, #1a5632 100%);
+    }
+    .toc-item {
+      cursor: pointer;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+    .toc-item:hover, .toc-item.active {
+      border-left-color: #d4af37;
+      background: rgba(212,175,55,0.08);
+    }
+    .fade-in { animation: fadeIn 0.6s ease both; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    .stagger-1 { animation-delay: 0.05s; }
+    .stagger-2 { animation-delay: 0.1s; }
+    .stagger-3 { animation-delay: 0.15s; }
+    .stagger-4 { animation-delay: 0.2s; }
+    .stagger-5 { animation-delay: 0.25s; }
+    .stagger-6 { animation-delay: 0.3s; }
+    .stagger-7 { animation-delay: 0.35s; }
+    .stagger-8 { animation-delay: 0.4s; }
+    .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .collapsible-content.open { max-height: 5000px; }
+    .chevron-icon { transition: transform 0.3s ease; }
+    .chevron-icon.rotated { transform: rotate(180deg); }
+    
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      .hero-pattern { padding: 24px 16px !important; }
+      .section-card { margin-bottom: 16px; }
+      table { font-size: 11px !important; }
+      table th, table td { padding: 8px 6px !important; }
+      .overflow-x-auto { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-pattern { padding: 16px 12px !important; }
+      h1 { font-size: 22px !important; }
+      h2 { font-size: 18px !important; }
+      h3 { font-size: 16px !important; }
+      .section-toggle { flex-direction: column; align-items: flex-start; }
+      .section-toggle i { margin-top: 8px; }
+      table { font-size: 10px !important; }
+      table th, table td { padding: 6px 4px !important; }
+      .list-disc { margin-left: 16px; }
+      ul, ol { padding-left: 16px; }
+    }
+    
+    @media print {
+      .no-print { display: none !important; }
+      .section-card { break-inside: avoid; }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body bg-[#f7f5f0] text-[#2d2d2d] overflow-auto">
+  <div class="w-full min-h-full"><!-- Hero -->
+   <header class="hero-pattern w-full px-6 py-16 md:py-24 text-center relative overflow-hidden">
+    <div class="absolute top-6 right-8 opacity-20">
+     <svg width="120" height="120" viewbox="0 0 120 120" fill="none"><circle cx="60" cy="50" r="20" stroke="#d4af37" stroke-width="2" fill="none" /> <path d="M45 70 L60 100 L75 70" stroke="#d4af37" stroke-width="2" fill="none" /> <circle cx="60" cy="50" r="8" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-dasharray="3 3" />
+     </svg>
+    </div>
+    <p class="text-[#d4af37] font-body text-sm tracking-[0.3em] uppercase mb-4 fade-in">Giáo án dự án môn Hóa học</p>
+    <h1 id="hero-title" class="font-heading text-white text-3xl md:text-5xl font-800 leading-tight mb-4 fade-in stagger-1">DỰ ÁN HÓA HỌC: "LẮNG"<br><span class="text-[#d4af37]">Ứng dụng Phức chất</span></h1>
+    <div class="w-24 h-0.5 bg-[#d4af37] mx-auto my-6 fade-in stagger-2"></div>
+    <p class="text-white/70 font-body text-base md:text-lg max-w-xl mx-auto fade-in stagger-3">Khám phá thế giới phức chất qua dự án thực tiễn — từ lý thuyết đến ứng dụng trong đời sống</p>
+    <div class="mt-8 pt-6 border-t border-white/20 fade-in stagger-4">
+     <p class="text-white/60 font-body text-xs md:text-sm">Lớp 12H1 — Trường THPT Nguyễn Khuyến</p>
+     <p class="text-white/50 font-body text-xs mt-2">Hướng dẫn: <span class="text-[#d4af37]">Cô Nguyễn Anh Thư</span> &amp; <span class="text-[#d4af37]">Thầy Nguyễn Thành Luân</span></p>
+     <div class="mt-6 pt-6 border-t border-white/20"><a href="https://leonproject212.github.io/duan" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2 bg-[#d4af37] text-[#0f3d1e] font-semibold rounded-lg hover:bg-white transition-all duration-300 text-sm"> <i data-lucide="arrow-left" class="w-4 h-4"></i> Trở về trang chủ </a>
+     </div>
+    </div>
+   </header><!-- Main layout -->
+   <div class="max-w-6xl mx-auto px-4 md:px-8 py-10 flex flex-col lg:flex-row gap-8"><!-- Sidebar TOC -->
+    <nav class="no-print lg:w-64 shrink-0 lg:sticky lg:top-8 lg:self-start bg-white rounded-xl p-5 shadow-sm border border-[#e8e4dc]" aria-label="Mục lục">
+     <h2 class="font-heading text-[#1a5632] text-lg font-700 mb-4">📑 Mục lục</h2>
+     <ul class="space-y-1 text-sm" id="toc-list">
+      <li><a href="#s1" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">I. Mục tiêu bài học</a></li>
+      <li><a href="#s2" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">II. Chuẩn bị thiết bị</a></li>
+      <li><a href="#s3" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">III. Phân công nhiệm vụ</a></li>
+      <li><a href="#s4" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">IV. Phương pháp dạy học</a></li>
+      <li><a href="#s5" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">V. Câu hỏi nghiên cứu</a></li>
+      <li><a href="#s6" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">VI. Đánh giá</a></li>
+      <li><a href="#s7" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">VII. Lưu ý</a></li>
+      <li><a href="#s8" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">VIII. Tài liệu tham khảo</a></li>
+      <li><a href="#s9" class="toc-item block px-3 py-2 rounded-r text-[#2d2d2d] hover:text-[#1a5632]">IX. Phụ lục</a></li>
+     </ul>
+    </nav><!-- Content -->
+    <main class="flex-1 space-y-6" role="main"><!-- Section I -->
+     <section id="s1" class="section-card p-6 fade-in stagger-1"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">I</span> Mục tiêu bài học</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-4">
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-3 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i> I. Về kiến thức</h3>
+        <ul class="list-disc list-inside space-y-2 text-[#444] leading-relaxed ml-2">
+         <li>Trình bày được những kiến thức cơ bản về bệnh ung thư, bao gồm khái niệm, sự hình thành và phát triển của tế bào ung thư trong cơ thể.</li>
+         <li>Nhận biết được tình hình ung thư trên thế giới và tại Việt Nam, một số loại ung thư phổ biến và các yếu tố nguy cơ liên quan.</li>
+         <li>Hiểu được vai trò của y học hiện đại trong việc phát hiện và điều trị ung thư; bước đầu tìm hiểu cơ chế tác động của một số thuốc điều trị như cisplatin.</li>
+         <li>Nhận diện được một số quan niệm sai lầm phổ biến trong cộng đồng về bệnh ung thư và ý nghĩa của việc tiếp cận thông tin y khoa chính xác.</li>
+         <li>Hiểu được ý nghĩa của các hoạt động cộng đồng trong việc chia sẻ, hỗ trợ và đồng hành cùng những người đang đối diện với bệnh tật.</li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-3 flex items-center gap-2"><i data-lucide="wrench" class="w-4 h-4"></i> II. Về năng lực</h3>
+        <div class="space-y-3 ml-2">
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">a) Năng lực chung</h4>
+          <ul class="list-disc list-inside space-y-1 text-[#444]">
+           <li><strong>Năng lực tự học và tìm hiểu thông tin:</strong> học sinh biết cách tìm kiếm, chọn lọc và tổng hợp thông tin từ các nguồn tài liệu khoa học và dữ liệu thực tế.</li>
+           <li><strong>Năng lực giao tiếp và hợp tác:</strong> học sinh biết làm việc nhóm, phân công nhiệm vụ, trao đổi ý kiến và cùng xây dựng sản phẩm học tập.</li>
+           <li><strong>Năng lực giải quyết vấn đề:</strong> học sinh biết đặt câu hỏi, phân tích vấn đề và đưa ra các đề xuất phù hợp trong quá trình thực hiện dự án.</li>
+          </ul>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">b) Năng lực đặc thù</h4>
+          <ul class="list-disc list-inside space-y-1 text-[#444]">
+           <li><strong>Năng lực nghiên cứu khoa học:</strong> bước đầu biết thiết kế khảo sát nhận thức, thu thập và phân tích dữ liệu.</li>
+           <li><strong>Năng lực phân tích thực trạng:</strong> đọc hiểu và đánh giá các số liệu liên quan đến tình hình ung thư tại Việt Nam và trên thế giới.</li>
+           <li><strong>Năng lực truyền thông khoa học:</strong> trình bày và chia sẻ các kiến thức khoa học bằng ngôn ngữ dễ hiểu, phù hợp với cộng đồng.</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-3 flex items-center gap-2"><i data-lucide="heart" class="w-4 h-4"></i> III. Về phẩm chất</h3>
+        <ul class="list-disc list-inside space-y-2 text-[#444] leading-relaxed ml-2">
+         <li><strong>Nhân ái:</strong> biết lắng nghe, thấu hiểu và đồng cảm với những người đang đối diện với bệnh tật; sẵn sàng tham gia các hoạt động sẻ chia và hỗ trợ cộng đồng.</li>
+         <li><strong>Trách nhiệm:</strong> có ý thức tìm hiểu và lan tỏa những thông tin khoa học đúng đắn về sức khỏe.</li>
+         <li><strong>Chăm chỉ:</strong> tích cực tham gia các hoạt động nghiên cứu, thảo luận và triển khai các nhiệm vụ trong dự án.</li>
+         <li><strong>Trung thực:</strong> tôn trọng dữ liệu, trình bày thông tin khoa học chính xác và có trách nhiệm trong quá trình học tập.</li>
+        </ul>
+       </div>
+       <div class="bg-[#f0f7f2] rounded-lg p-4 border border-[#d0e5d6]">
+        <h3 class="font-semibold text-[#1a5632] mb-3 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4"></i> Ý nghĩa của dự án "LẮNG"</h3>
+        <p class="text-[#444] leading-relaxed">Thông qua dự án "LẮNG", học sinh không chỉ tiếp cận kiến thức khoa học về sức khỏe mà còn hình thành thái độ quan tâm, sẻ chia với cộng đồng, từ đó nhận ra rằng <strong>hiểu biết khoa học và lòng nhân ái</strong> có thể cùng nhau tạo nên những hành động ý nghĩa.</p>
+       </div>
+      </div>
+     </section><!-- Section II -->
+     <section id="s2" class="section-card p-6 fade-in stagger-2"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">II</span> Chuẩn bị thiết bị dạy học và học liệu</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-6"><!-- 1. Chuẩn bị của giáo viên -->
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-4 flex items-center gap-2 text-lg"><i data-lucide="briefcase" class="w-5 h-5"></i> 1. Chuẩn bị của giáo viên</h3>
+        <ul class="space-y-3 text-[#444] text-sm ml-7">
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Máy tính xách tay (laptop)</strong> kết nối internet để trình chiếu tài liệu và điều phối các hoạt động của dự án.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Máy chiếu / màn hình trình chiếu</strong> phục vụ cho phần giới thiệu dự án, trình bày sản phẩm của các nhóm và thảo luận chung.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Bài trình chiếu (Canva/Github)</strong> giới thiệu dự án "LẮNG", cấu trúc hoạt động của các nhóm và hướng dẫn nhiệm vụ học tập.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Phiếu học tập và phiếu khảo sát</strong> về nhận thức cộng đồng liên quan đến sức khỏe và ung thư để học sinh sử dụng trong hoạt động khảo sát.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Tài liệu tham khảo khoa học</strong> từ các trang web y học uy tín, báo cáo về tình hình ung thư trên thế giới và tại Việt Nam.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Hệ thống câu hỏi định hướng nghiên cứu</strong> cho từng nhóm (khảo sát nhận thức, tổng quan kiến thức, thực trạng tại Việt Nam, nghiên cứu về thuốc điều trị).</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Rubric đánh giá</strong> hoạt động nhóm và sản phẩm học tập để đánh giá quá trình và kết quả thực hiện dự án.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Các công cụ hỗ trợ số</strong> như Google Form, Google Docs, Canva, hoặc các nền tảng khảo sát trực tuyến để thu thập và tổng hợp dữ liệu.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Công cụ AI hỗ trợ học tập</strong> (ví dụ: ChatGPT, các công cụ tìm kiếm AI, công cụ phân tích dữ liệu) giúp học sinh tìm kiếm thông tin, tổng hợp tài liệu và xây dựng nội dung nghiên cứu.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Mô hình hoặc hình ảnh minh họa</strong> về cấu trúc tế bào, cơ chế tác động của thuốc điều trị (ví dụ cisplatin) nhằm hỗ trợ việc giải thích kiến thức khoa học.</span></li>
+        </ul>
+       </div><!-- 2. Chuẩn bị của học sinh -->
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-4 flex items-center gap-2 text-lg"><i data-lucide="book" class="w-5 h-5"></i> 2. Chuẩn bị của học sinh</h3>
+        <ul class="space-y-3 text-[#444] text-sm ml-7">
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Laptop, máy tính bảng hoặc điện thoại thông minh</strong> có kết nối internet để tìm kiếm thông tin, xử lý dữ liệu khảo sát và xây dựng sản phẩm học tập.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Tài khoản các công cụ trực tuyến</strong> như Google Form, Canva hoặc các nền tảng thiết kế để thực hiện khảo sát và thiết kế sản phẩm truyền thông.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Công cụ lập trình cơ bản (HTML)</strong> để xây dựng hoặc trình bày một trang web/portfolio nhỏ giới thiệu nội dung nghiên cứu của nhóm.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Sổ ghi chép, bút viết</strong> để ghi lại thông tin trong quá trình nghiên cứu và thảo luận.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Phiếu khảo sát nhận thức</strong> dùng để thu thập dữ liệu từ bạn bè, người thân hoặc cộng đồng trong hoạt động "LẮNG".</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Các vật liệu phục vụ hoạt động gây quỹ và kết nối cộng đồng</strong> như nguyên liệu làm vòng tay, vật dụng chuẩn bị cho hoạt động bán nước gây quỹ trong phần "ÔM".</span></li>
+        </ul>
+       </div><!-- 3. Học liệu sử dụng -->
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-4 flex items-center gap-2 text-lg"><i data-lucide="library" class="w-5 h-5"></i> 3. Học liệu sử dụng trong bài học</h3>
+        <ul class="space-y-3 text-[#444] text-sm ml-7">
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Bài viết, báo cáo khoa học về tình hình ung thư trên thế giới và tại Việt Nam.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Các bài báo, tài liệu phổ biến kiến thức về ung thư và những quan niệm sai lầm thường gặp.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Tài liệu khoa học giới thiệu cơ chế hoạt động của thuốc cisplatin trong điều trị ung thư.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="image" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Các biểu đồ, hình ảnh minh họa và video khoa học giúp học sinh dễ dàng tiếp cận kiến thức.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="database" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Dữ liệu thu thập từ hoạt động khảo sát nhận thức cộng đồng do học sinh thực hiện.</span></li>
+        </ul>
+       </div>
+      </div>
+     </section><!-- Section III -->
+     <section id="s3" class="section-card p-6 fade-in stagger-3"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">III</span> Phân công nhiệm vụ</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-6"><!-- Bảng phân công 4 nhóm -->
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-4 flex items-center gap-2 text-lg"><i data-lucide="table" class="w-5 h-5"></i> Bảng phân công nhiệm vụ dự án "LẮNG"</h3>
+        <div class="overflow-x-auto">
+         <table class="w-full text-sm border-collapse">
+          <thead>
+           <tr class="bg-[#1a5632] text-white">
+            <th class="px-4 py-3 text-left rounded-tl-lg">Nhóm / Hoạt động</th>
+            <th class="px-4 py-3 text-left">Nội dung nhiệm vụ chính</th>
+            <th class="px-4 py-3 text-left">Sản phẩm / Kết quả mong đợi</th>
+            <th class="px-4 py-3 text-left rounded-tr-lg">Thời gian</th>
+           </tr>
+          </thead>
+          <tbody class="text-[#444]">
+           <tr class="border-b border-[#e8e4dc]">
+            <td class="px-4 py-3 font-bold text-[#1a5632]">Nhóm 1 – HIỂU</td>
+            <td class="px-4 py-3 text-xs leading-relaxed">Tìm hiểu kiến thức tổng quan về ung thư (khái niệm, nguyên nhân, cơ chế hình thành tế bào ung thư). Tổng hợp các thông tin khoa học từ nguồn tài liệu đáng tin cậy. Thiết kế nội dung trình bày (slide / poster / website HTML).</td>
+            <td class="px-4 py-3 text-xs">Slide trình bày tổng quan về ung thư. Poster hoặc trang web nhỏ giới thiệu kiến thức khoa học.</td>
+            <td class="px-4 py-3 text-xs">Trong giai đoạn nghiên cứu dự án</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc] bg-[#faf8f4]">
+            <td class="px-4 py-3 font-bold text-[#d4af37]">Nhóm 2 – NHÌN</td>
+            <td class="px-4 py-3 text-xs leading-relaxed">Tìm hiểu tình hình ung thư trên thế giới và tại Việt Nam. Thu thập số liệu thống kê, biểu đồ và phân tích thực trạng. Trình bày kết quả nghiên cứu dưới dạng infographic hoặc báo cáo.</td>
+            <td class="px-4 py-3 text-xs">Slide / infographic thể hiện tình hình ung thư tại Việt Nam và thế giới. Báo cáo ngắn về thực trạng.</td>
+            <td class="px-4 py-3 text-xs">Trong giai đoạn nghiên cứu dự án</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc]">
+            <td class="px-4 py-3 font-bold text-[#1a5632]">Nhóm 3 – HEAL</td>
+            <td class="px-4 py-3 text-xs leading-relaxed">Tìm hiểu về các phương pháp điều trị ung thư, tập trung vào thuốc cisplatin. Giải thích cơ chế tác động của thuốc lên tế bào ung thư. Thiết kế sơ đồ minh họa hoặc mô hình đơn giản.</td>
+            <td class="px-4 py-3 text-xs">Slide thuyết minh cơ chế tác động của cisplatin. Hình ảnh / sơ đồ minh họa quá trình điều trị.</td>
+            <td class="px-4 py-3 text-xs">Trong giai đoạn nghiên cứu dự án</td>
+           </tr>
+           <tr class="bg-[#faf8f4]">
+            <td class="px-4 py-3 font-bold text-[#d4af37]">Nhóm 4 – LẮNG</td>
+            <td class="px-4 py-3 text-xs leading-relaxed">Thiết kế phiếu khảo sát về nhận thức cộng đồng liên quan đến ung thư. Tiến hành khảo sát trong lớp hoặc cộng đồng (Google Form / phiếu giấy). Tổng hợp và phân tích kết quả khảo sát.</td>
+            <td class="px-4 py-3 text-xs">Bảng kết quả khảo sát. Biểu đồ thể hiện mức độ nhận thức của cộng đồng.</td>
+            <td class="px-4 py-3 text-xs">Trong giai đoạn nghiên cứu dự án</td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div><!-- Hoạt động cộng đồng -->
+       <div>
+        <h3 class="font-semibold text-[#1a5632] mb-4 flex items-center gap-2 text-lg"><i data-lucide="heart-handshake" class="w-5 h-5"></i> Phân công các hoạt động cộng đồng</h3>
+        <div class="space-y-4">
+         <!-- Hoạt động 1 -->
+         <div class="rounded-xl border-2 border-[#1a5632] overflow-hidden">
+          <div class="bg-[#1a5632] text-white px-5 py-3 flex items-center gap-3"><i data-lucide="droplet" class="w-5 h-5"></i>
+           <h4 class="font-semibold">Bán nước gây quỹ</h4>
+          </div>
+          <div class="p-4 space-y-2 text-sm text-[#444]">
+           <p><strong>Nội dung nhiệm vụ:</strong></p>
+           <ul class="list-disc list-inside space-y-1 ml-2">
+            <li>Lên kế hoạch bán nước.</li>
+            <li>Chuẩn bị nguyên liệu, dụng cụ.</li>
+            <li>Thiết kế poster hoặc bảng thông báo hoạt động.</li>
+            <li>Quản lý và tổng kết số tiền gây quỹ.</li>
+           </ul>
+           <p class="pt-2"><strong>Nhóm phụ trách:</strong> Đại diện các nhóm phối hợp thực hiện</p>
+           <p><strong>Sản phẩm / Kết quả:</strong> Hoạt động bán nước gây quỹ được triển khai. Báo cáo số tiền gây quỹ.</p>
+          </div>
+         </div><!-- Hoạt động 2 -->
+         <div class="rounded-xl border-2 border-[#d4af37] overflow-hidden">
+          <div class="bg-[#d4af37] text-[#2d2d2d] px-5 py-3 flex items-center gap-3"><i data-lucide="bracelet" class="w-5 h-5"></i>
+           <h4 class="font-semibold">Bán vòng tay gây quỹ – Kết nối</h4>
+          </div>
+          <div class="p-4 space-y-2 text-sm text-[#444]">
+           <p><strong>Nội dung nhiệm vụ:</strong></p>
+           <ul class="list-disc list-inside space-y-1 ml-2">
+            <li>Thiết kế và làm vòng tay handmade.</li>
+            <li>Chuẩn bị gian hàng bán vòng.</li>
+            <li>Giới thiệu ý nghĩa của dự án "LẮNG".</li>
+           </ul>
+           <p class="pt-2"><strong>Nhóm phụ trách:</strong> Đại diện các nhóm phối hợp thực hiện</p>
+           <p><strong>Sản phẩm / Kết quả:</strong> Sản phẩm vòng tay gây quỹ. Hoạt động truyền thông về dự án.</p>
+          </div>
+         </div><!-- Hoạt động 3 -->
+         <div class="rounded-xl border-2 border-[#1a5632] overflow-hidden">
+          <div class="bg-[#1a5632] text-white px-5 py-3 flex items-center gap-3"><i data-lucide="hospital" class="w-5 h-5"></i>
+           <h4 class="font-semibold">Thăm và tìm hiểu thực tế tại bệnh viện Ung bướu</h4>
+          </div>
+          <div class="p-4 space-y-2 text-sm text-[#444]">
+           <p><strong>Nội dung nhiệm vụ:</strong></p>
+           <ul class="list-disc list-inside space-y-1 ml-2">
+            <li>Chuẩn bị nội dung tìm hiểu trước khi tham quan.</li>
+            <li>Ghi chép, quan sát và tìm hiểu thực tế tại bệnh viện.</li>
+            <li>Tặng quà và gửi lời động viên đến bệnh nhân.</li>
+            <li>Viết báo cáo cảm nhận sau chuyến đi.</li>
+           </ul>
+           <p class="pt-2"><strong>Nhóm phụ trách:</strong> Đại diện học sinh tham gia</p>
+           <p><strong>Sản phẩm / Kết quả:</strong> Báo cáo hoặc bài chia sẻ sau chuyến thăm. Hoạt động cộng đồng mang ý nghĩa nhân văn.</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section><!-- Section IV -->
+     <section id="s4" class="section-card p-6 fade-in stagger-4"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">IV</span> Phương pháp dạy học</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-6"><!-- 1. Problem-Based Learning -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4 space-y-3">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2"><i data-lucide="lightbulb" class="w-5 h-5"></i> 1. Phương pháp dạy học theo vấn đề (Problem-Based Learning – PBL)</h3>
+        <p class="text-sm text-[#444]"><strong>Mô tả:</strong> Giáo viên đưa ra những vấn đề thực tế, học sinh tự tìm hiểu và trả lời các câu hỏi trong bộ tài liệu nghiên cứu.</p>
+        <div class="bg-white rounded-lg p-3 space-y-2">
+         <p class="text-xs font-medium text-[#1a5632]">📌 Ví dụ áp dụng:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Vấn đề: "Tại sao ung thư là vấn đề sức khỏe nghiêm trọng?"</li>
+          <li>Học sinh tìm hiểu, trả lời các câu hỏi Nhóm 1 (HIỂU)</li>
+          <li>Làm việc nhóm phân tích – thảo luận – trình bày kết quả</li>
+         </ul>
+        </div>
+        <div class="bg-[#f0f7f2] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">✅ Lợi ích:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Phát triển tư duy phản biện và kỹ năng giải quyết vấn đề</li>
+          <li>Tăng khả năng tự học và nghiên cứu độc lập</li>
+          <li>Gắn kiến thức với thực tế (y tế, xã hội, cộng đồng)</li>
+         </ul>
+        </div>
+       </div><!-- 2. Project-Based Learning -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4 space-y-3">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2"><i data-lucide="folder-kanban" class="w-5 h-5"></i> 2. Phương pháp dạy học theo dự án (Project-Based Learning)</h3>
+        <p class="text-sm text-[#444]"><strong>Mô tả:</strong> Chia lớp thành các nhóm, mỗi nhóm phụ trách 1 phần nội dung, tạo sản phẩm học tập cụ thể.</p>
+        <div class="bg-white rounded-lg p-3 space-y-2">
+         <p class="text-xs font-medium text-[#1a5632]">📌 Phân công cụ thể:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li><strong>Nhóm 1 (HIỂU):</strong> Tổng quan và khái niệm ung thư</li>
+          <li><strong>Nhóm 2 (NHÌN):</strong> Thực trạng ung thư tại Việt Nam</li>
+          <li><strong>Nhóm 3 (HEAL):</strong> Điều trị (cisplatin &amp; cơ chế)</li>
+          <li><strong>Nhóm 4 (LẮNG):</strong> Quan niệm sai lầm &amp; khảo sát cộng đồng</li>
+         </ul>
+        </div>
+        <div class="bg-[#fdf8e8] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">📤 Sản phẩm:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Slide thuyết trình (8–10 phút/nhóm)</li>
+          <li>Poster khoa học hoặc infographic</li>
+          <li>Video ngắn hoặc sơ đồ minh họa</li>
+         </ul>
+        </div>
+        <div class="bg-[#f0f7f2] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">✅ Lợi ích:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Rèn kỹ năng làm việc nhóm &amp; phân công công việc</li>
+          <li>Tăng tính sáng tạo &amp; sở hữu sản phẩm</li>
+          <li>Hiểu sâu kiến thức thông qua "học bằng làm"</li>
+         </ul>
+        </div>
+       </div><!-- 3. Group Discussion -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4 space-y-3">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2"><i data-lucide="message-circle-2" class="w-5 h-5"></i> 3. Phương pháp thảo luận nhóm (Group Discussion)</h3>
+        <p class="text-sm text-[#444]"><strong>Mô tả:</strong> Học sinh trao đổi, tranh luận về các câu hỏi mở, nhất là phần quan niệm sai lầm và câu hỏi thảo luận.</p>
+        <div class="bg-white rounded-lg p-3 space-y-2">
+         <p class="text-xs font-medium text-[#1a5632]">📌 Ví dụ câu hỏi thảo luận:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>"Ung thư có phải là 'án tử hình' không? Tại sao?"</li>
+          <li>"Phẫu thuật hay hóa trị – cách nào hiệu quả hơn?"</li>
+          <li>"Việt Nam nên ưu tiên chiến lược phòng ngừa nào?"</li>
+         </ul>
+        </div>
+        <div class="bg-[#f0f7f2] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">✅ Lợi ích:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Khuyến khích học sinh bày tỏ quan điểm &amp; lập luận</li>
+          <li>Phát triển kỹ năng giao tiếp &amp; thuyết phục</li>
+          <li>Nhận diện &amp; sửa sai những hiểu lầm phổ biến</li>
+         </ul>
+        </div>
+       </div><!-- 4. Student Presentation -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4 space-y-3">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2"><i data-lucide="presentation" class="w-5 h-5"></i> 4. Phương pháp học qua thuyết trình (Student Presentation)</h3>
+        <p class="text-sm text-[#444]"><strong>Mô tả:</strong> Mỗi nhóm trình bày nội dung nghiên cứu trước lớp, có phần hỏi – đáp &amp; phản biện.</p>
+        <div class="bg-white rounded-lg p-3 space-y-2">
+         <p class="text-xs font-medium text-[#1a5632]">📌 Cấu trúc thuyết trình:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Giới thiệu vấn đề (1–2 phút)</li>
+          <li>Trình bày nội dung chính (5–6 phút)</li>
+          <li>Hỏi đáp &amp; phản biện (2–3 phút)</li>
+         </ul>
+        </div>
+        <div class="bg-[#fdf8e8] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">✅ Lợi ích:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Rèn kỹ năng trình bày &amp; quản lý thời gian</li>
+          <li>Tăng sự tự tin &amp; kỹ năng diễn đạt</li>
+          <li>Học sinh học lẫn nhau từ các bài thuyết trình</li>
+         </ul>
+        </div>
+       </div><!-- 5. Visual & Multimedia -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4 space-y-3">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2"><i data-lucide="image" class="w-5 h-5"></i> 5. Phương pháp trực quan – đa phương tiện (Visual &amp; Multimedia)</h3>
+        <p class="text-sm text-[#444]"><strong>Mô tả:</strong> Sử dụng hình ảnh, video, sơ đồ, mô hình để minh họa các khái niệm phức tạp.</p>
+        <div class="bg-white rounded-lg p-3 space-y-2">
+         <p class="text-xs font-medium text-[#1a5632]">📌 Các công cụ trực quan:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Hình ảnh tế bào bình thường vs. tế bào ung thư</li>
+          <li>Video minh họa cơ chế hoạt động của cisplatin</li>
+          <li>Sơ đồ quá trình lan tỏa &amp; phát triển ung thư</li>
+          <li>Biểu đồ thống kê tình hình ung thư Việt Nam</li>
+         </ul>
+        </div>
+        <div class="bg-[#f0f7f2] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">✅ Lợi ích:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Giúp dễ hiểu các khái niệm khó (DNA, tế bào, phân tử)</li>
+          <li>Tăng hứng thú &amp; engagement với học tập</li>
+          <li>Thích hợp với các học sinh học tập theo hình ảnh</li>
+         </ul>
+        </div>
+       </div><!-- 6. Guided Questioning -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4 space-y-3">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5"></i> 6. Phương pháp hỏi – đáp định hướng (Guided Questioning)</h3>
+        <p class="text-sm text-[#444]"><strong>Mô tả:</strong> Giáo viên sử dụng các câu hỏi trong tài liệu để dẫn dắt bài học từ dễ đến khó.</p>
+        <div class="bg-white rounded-lg p-3 space-y-2">
+         <p class="text-xs font-medium text-[#1a5632]">📌 Cấp độ câu hỏi (Bloom's Taxonomy):</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li><strong>1. Nhận biết:</strong> "Ung thư là gì?" (Câu hỏi 1, Nhóm 1)</li>
+          <li><strong>2. Hiểu:</strong> "Sự khác nhau giữa tế bào bình thường &amp; ung thư?" (Câu 5)</li>
+          <li><strong>3. Vận dụng:</strong> "Lối sống ảnh hưởng đến nguy cơ như thế nào?" (Câu 12)</li>
+          <li><strong>4. Phân tích:</strong> "Yếu tố nào góp phần tăng ung thư tại Việt Nam?" (Câu 15)</li>
+         </ul>
+        </div>
+        <div class="bg-[#fdf8e8] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">✅ Lợi ích:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Học sinh không bị "quá tải" từ câu hỏi khó</li>
+          <li>Học có hệ thống, logic &amp; có thứ tự</li>
+          <li>Dễ kiểm tra mức độ hiểu bài của học sinh</li>
+         </ul>
+        </div>
+       </div><!-- 7. Contextual Learning -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4 space-y-3">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2"><i data-lucide="globe" class="w-5 h-5"></i> 7. Phương pháp liên hệ thực tiễn (Contextual Learning)</h3>
+        <p class="text-sm text-[#444]"><strong>Mô tả:</strong> Gắn kiến thức với thực tế đời sống, môi trường xung quanh của học sinh.</p>
+        <div class="bg-white rounded-lg p-3 space-y-2">
+         <p class="text-xs font-medium text-[#1a5632]">📌 Các liên hệ thực tiễn:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Số liệu ung thư tại Việt Nam &amp; thế giới (Nhóm 2)</li>
+          <li>Thói quen sống: hút thuốc, ăn uống, môi trường</li>
+          <li>Tầm quan trọng của khám sức khỏe định kỳ</li>
+          <li>Hoạt động cộng đồng: gây quỹ, hỗ trợ bệnh nhân</li>
+         </ul>
+        </div>
+        <div class="bg-[#f0f7f2] rounded-lg p-3">
+         <p class="text-xs font-medium text-[#1a5632]">✅ Lợi ích:</p>
+         <ul class="text-xs text-[#444] space-y-1 list-disc list-inside">
+          <li>Học sinh thấy kiến thức "có ý nghĩa" &amp; hữu ích</li>
+          <li>Tăng ý thức bảo vệ sức khỏe cá nhân &amp; cộng đồng</li>
+          <li>Khuyến khích hành động thiết thực (tầm soát, sửa thói quen)</li>
+         </ul>
+        </div>
+       </div><!-- Kết luận -->
+       <div class="rounded-xl bg-gradient-to-r from-[#0f3d1e] to-[#1a5632] text-white p-5">
+        <h3 class="font-semibold text-lg flex items-center gap-2 mb-3"><i data-lucide="zap" class="w-5 h-5"></i> 🎯 Kết hợp phương pháp để tối đa hiệu quả</h3>
+        <div class="space-y-2 text-sm">
+         <p><strong>Trình tự đề xuất:</strong></p>
+         <div class="bg-white/10 rounded-lg p-3 space-y-2">
+          <p>1️⃣ <strong>Khởi động (5 phút):</strong> Guided Questioning để gợi mở vấn đề</p>
+          <p>2️⃣ <strong>Tìm hiểu (1 tuần):</strong> PBL + Project-Based Learning (học sinh làm việc nhóm, nghiên cứu)</p>
+          <p>3️⃣ <strong>Thảo luận (2–3 ngày):</strong> Group Discussion + Visual aids (minh họa &amp; tranh luận)</p>
+          <p>4️⃣ <strong>Thuyết trình (2–3 ngày):</strong> Student Presentation (mỗi nhóm 8–10 phút)</p>
+          <p>5️⃣ <strong>Kết thúc (1 tiết):</strong> Contextual Learning + Đánh giá tổng thể</p>
+         </div>
+         <p class="text-xs italic mt-3">→ Phương pháp kết hợp này phù hợp với nội dung mang tính nghiên cứu, khoa học &amp; thực tiễn như chủ đề <strong>Ung thư &amp; Sức khỏe Cộng đồng</strong></p>
+        </div>
+       </div>
+      </div>
+     </section><!-- Section V -->
+     <section id="s4" class="section-card p-6 fade-in stagger-4"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">IV</span> Phân công nhiệm vụ</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-4"><!-- Group 1 -->
+       <div class="rounded-xl border-2 border-[#1a5632] overflow-hidden">
+        <div class="bg-[#1a5632] text-white px-5 py-3 flex items-center gap-3"><i data-lucide="beaker" class="w-5 h-5"></i>
+         <h3 class="font-semibold">Nhóm 1 — Khái niệm &amp; Cấu tạo phức chất</h3>
+        </div>
+        <div class="p-4 space-y-2 text-sm text-[#444]">
+         <p><strong>Nhiệm vụ:</strong> Nghiên cứu và trình bày khái niệm phức chất, ion trung tâm, phối tử, số phối trí, cầu nội – cầu ngoại.</p>
+         <p><strong>Sản phẩm:</strong> Slide/Poster + Mô hình phức chất 3D (tự làm hoặc vẽ).</p>
+         <p><strong>Thời gian thuyết trình:</strong> 8–10 phút.</p>
+        </div>
+       </div><!-- Group 2 -->
+       <div class="rounded-xl border-2 border-[#d4af37] overflow-hidden">
+        <div class="bg-[#d4af37] text-[#2d2d2d] px-5 py-3 flex items-center gap-3"><i data-lucide="atom" class="w-5 h-5"></i>
+         <h3 class="font-semibold">Nhóm 2 — Liên kết &amp; Thuyết trường tinh thể</h3>
+        </div>
+        <div class="p-4 space-y-2 text-sm text-[#444]">
+         <p><strong>Nhiệm vụ:</strong> Trình bày thuyết trường tinh thể, sự tách mức năng lượng d, giải thích màu sắc và từ tính phức chất.</p>
+         <p><strong>Sản phẩm:</strong> Slide + Sơ đồ tách mức năng lượng minh họa.</p>
+         <p><strong>Thời gian thuyết trình:</strong> 8–10 phút.</p>
+        </div>
+       </div><!-- Group 3 -->
+       <div class="rounded-xl border-2 border-[#1a5632] overflow-hidden">
+        <div class="bg-[#1a5632] text-white px-5 py-3 flex items-center gap-3"><i data-lucide="stethoscope" class="w-5 h-5"></i>
+         <h3 class="font-semibold">Nhóm 3 — Ứng dụng phức chất trong Y học</h3>
+        </div>
+        <div class="p-4 space-y-2 text-sm text-[#444]">
+         <p><strong>Nhiệm vụ:</strong> Nghiên cứu ứng dụng phức chất trong y học (cisplatin trị ung thư, thuốc cản quang MRI, hemoglobin...).</p>
+         <p><strong>Sản phẩm:</strong> Slide/Video + Poster minh họa.</p>
+         <p><strong>Thời gian thuyết trình:</strong> 8–10 phút.</p>
+        </div>
+       </div><!-- Group 4 -->
+       <div class="rounded-xl border-2 border-[#d4af37] overflow-hidden">
+        <div class="bg-[#d4af37] text-[#2d2d2d] px-5 py-3 flex items-center gap-3"><i data-lucide="factory" class="w-5 h-5"></i>
+         <h3 class="font-semibold">Nhóm 4 — Ứng dụng trong Công nghiệp &amp; Đời sống</h3>
+        </div>
+        <div class="p-4 space-y-2 text-sm text-[#444]">
+         <p><strong>Nhiệm vụ:</strong> Tìm hiểu ứng dụng phức chất trong mạ điện, xử lý nước, phân tích hóa học, sơn màu, phim ảnh…</p>
+         <p><strong>Sản phẩm:</strong> Slide + Thí nghiệm minh họa (nếu có thể).</p>
+         <p><strong>Thời gian thuyết trình:</strong> 8–10 phút.</p>
+        </div>
+       </div>
+      </div>
+     </section><!-- Section V -->
+     <section id="s5" class="section-card p-6 fade-in stagger-5"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">V</span> Bộ câu hỏi nghiên cứu cho bài thuyết trình</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-6"><!-- Nhóm 1: Tổng quan ung thư -->
+       <div class="border-l-4 border-[#1a5632] bg-[#faf8f4] rounded-r-lg p-4">
+        <h3 class="font-semibold text-[#1a5632] mb-3 text-lg">📚 Nhóm 1 – HIỂU: Tổng quan về Ung thư</h3>
+        <div class="space-y-4 text-sm text-[#444]">
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">1. Introduction – Giới thiệu (Câu 1–3)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+           <li>Ung thư là gì?</li>
+           <li>Tại sao ung thư được xem là một vấn đề sức khỏe nghiêm trọng trên toàn thế giới?</li>
+           <li>Ung thư ảnh hưởng đến cơ thể con người như thế nào?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">2. Understanding Cancer – Hiểu về ung thư (Câu 4–8)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="4">
+           <li>Ung thư xảy ra khi điều gì xảy ra với các tế bào trong cơ thể?</li>
+           <li>Sự khác nhau giữa tế bào bình thường và tế bào ung thư là gì?</li>
+           <li>Ung thư có thể lan sang các bộ phận khác của cơ thể bằng cách nào?</li>
+           <li>"Tumor" là gì?</li>
+           <li>Sự khác nhau giữa benign tumor (khối u lành tính) và malignant tumor (khối u ác tính) là gì?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">3. Causes and Risk Factors – Nguyên nhân &amp; yếu tố nguy cơ (Câu 9–12)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="9">
+           <li>Điều gì gây ra ung thư?</li>
+           <li>Đột biến DNA đóng vai trò như thế nào trong sự phát triển của ung thư?</li>
+           <li>Những yếu tố nguy cơ phổ biến dẫn đến ung thư là gì?</li>
+           <li>Lối sống của con người có thể ảnh hưởng đến nguy cơ mắc ung thư như thế nào?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">4. Types of Cancer – Các loại ung thư (Câu 13–17)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="13">
+           <li>Có những loại ung thư chính nào?</li>
+           <li>Carcinoma là gì và nó bắt đầu từ loại tế bào nào?</li>
+           <li>Sarcoma khác gì so với carcinoma?</li>
+           <li>Leukemia là loại ung thư ảnh hưởng đến bộ phận nào của cơ thể?</li>
+           <li>Lymphoma và myeloma liên quan đến hệ thống nào của cơ thể?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">5. Symptoms – Triệu chứng (Câu 18–20)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="18">
+           <li>Một số triệu chứng chung của ung thư là gì?</li>
+           <li>Những dấu hiệu cảnh báo nào cho thấy một người nên đi khám bác sĩ?</li>
+           <li>Tại sao nhiều loại ung thư khó phát hiện ở giai đoạn sớm?</li>
+          </ol>
+         </div>
+        </div>
+       </div><!-- Nhóm 2: Tình hình ung thư Việt Nam -->
+       <div class="border-l-4 border-[#d4af37] bg-[#fdf8e8] rounded-r-lg p-4">
+        <h3 class="font-semibold text-[#8b7315] mb-3 text-lg">🌍 Nhóm 2 – NHÌN: Tình hình Ung thư tại Việt Nam (GLOBOCAN 2022)</h3>
+        <div class="space-y-4 text-sm text-[#444]">
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">1. Tổng quan về ung thư tại Việt Nam (Câu 1–4)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+           <li>Ung thư hiện nay ảnh hưởng đến sức khỏe cộng đồng Việt Nam như thế nào?</li>
+           <li>Theo GLOBOCAN 2022, mỗi năm Việt Nam ghi nhận bao nhiêu ca mắc ung thư mới?</li>
+           <li>Số ca tử vong do ung thư tại Việt Nam là bao nhiêu mỗi năm?</li>
+           <li>So với các quốc gia khác, Việt Nam đứng ở vị trí nào về tỷ lệ mắc ung thư?</li>
+          </ol>
+          <p class="text-xs text-[#666] mt-2 ml-2 italic">💡 Dữ liệu: ~180.480 ca ung thư mới, ~120.184 ca tử vong mỗi năm</p>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">2. Các loại ung thư phổ biến tại Việt Nam (Câu 5–8)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="5">
+           <li>Những loại ung thư nào phổ biến nhất ở Việt Nam?</li>
+           <li>Loại ung thư nào có số ca mắc cao nhất?</li>
+           <li>Các loại ung thư phổ biến ở nam giới là gì?</li>
+           <li>Các loại ung thư phổ biến ở nữ giới là gì?</li>
+          </ol>
+          <p class="text-xs text-[#666] mt-2 ml-2 italic">💡 Top 5: Ung thư vú, gan, phổi, đại trực tràng, dạ dày</p>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">3. Phân bố theo giới tính &amp; độ tuổi (Câu 9–12)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="9">
+           <li>Tỷ lệ mắc ung thư giữa nam và nữ có khác nhau không?</li>
+           <li>Những loại ung thư nào thường gặp ở phụ nữ Việt Nam?</li>
+           <li>Những loại ung thư nào thường gặp ở nam giới Việt Nam?</li>
+           <li>Nhóm tuổi nào có nguy cơ mắc ung thư cao nhất?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">4. Xu hướng &amp; nguyên nhân (Câu 13–19)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="13">
+           <li>Tỷ lệ mắc ung thư tại Việt Nam đang tăng hay giảm trong những năm gần đây?</li>
+           <li>Những yếu tố nào góp phần làm tăng tỷ lệ ung thư tại Việt Nam?</li>
+           <li>Vai trò của thuốc lá trong ung thư phổi ở Việt Nam như thế nào?</li>
+           <li>Virus hoặc nhiễm trùng nào liên quan đến ung thư phổ biến tại Việt Nam?</li>
+           <li>Ô nhiễm môi trường và chế độ ăn uống ảnh hưởng đến nguy cơ ung thư ra sao?</li>
+           <li>Thực trạng phát hiện và điều trị ung thư tại Việt Nam như thế nào?</li>
+           <li>Những khó khăn trong hệ thống y tế khi điều trị ung thư là gì?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">5. Tác động xã hội &amp; kinh tế (Câu 20–22)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="20">
+           <li>Ung thư ảnh hưởng như thế nào đến gia đình và xã hội ở Việt Nam?</li>
+           <li>Chi phí điều trị ung thư có tạo gánh nặng tài chính cho bệnh nhân không?</li>
+          </ol>
+         </div>
+        </div>
+       </div><!-- Nhóm 3: Cisplatin -->
+       <div class="border-l-4 border-[#1a5632] bg-[#faf8f4] rounded-r-lg p-4">
+        <h3 class="font-semibold text-[#1a5632] mb-3 text-lg">⚕️ Nhóm 3 – HEAL: Cisplatin &amp; Cơ chế Điều trị Ung thư</h3>
+        <div class="space-y-4 text-sm text-[#444]">
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">1. Introduction – Tổng quan (Câu 1–4)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+           <li>Cisplatin là gì?</li>
+           <li>Cisplatin được sử dụng trong điều trị những loại ung thư nào?</li>
+           <li>Tại sao cisplatin được xem là một trong những thuốc hóa trị quan trọng nhất?</li>
+           <li>Cisplatin thuộc nhóm thuốc chống ung thư nào?</li>
+          </ol>
+          <p class="text-xs text-[#666] mt-2 ml-2 italic">💡 Cisplatin: cis-[Pt(NH₃)₂Cl₂] – phức chất platinum vuông phẳng</p>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">2. Chemical Properties – Tính chất hóa học (Câu 5–7)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="5">
+           <li>Công thức hóa học và cấu trúc phân tử của cisplatin là gì?</li>
+           <li>Tại sao cấu trúc cis của phân tử lại quan trọng đối với hoạt tính chống ung thư?</li>
+           <li>Cisplatin được tổng hợp hoặc phát triển như thế nào trong lịch sử nghiên cứu thuốc?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">3. Mechanism of Action – Cơ chế tác động (Câu 8–14)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="8">
+           <li>Các bước chính trong cơ chế tác động của cisplatin là gì?</li>
+           <li>Cisplatin đi vào tế bào ung thư bằng cách nào?</li>
+           <li>Quá trình aquation (hoạt hóa trong tế bào) là gì?</li>
+           <li>Cisplatin liên kết với DNA như thế nào?</li>
+           <li>DNA crosslink là gì và tại sao nó gây hại cho tế bào?</li>
+           <li>Việc liên kết với DNA ảnh hưởng đến quá trình replication và transcription như thế nào?</li>
+           <li>Cơ chế này dẫn đến apoptosis (chết tế bào theo chương trình) như thế nào?</li>
+          </ol>
+          <p class="text-xs text-[#666] mt-2 ml-2 italic">💡 Cơ chế: Tạo liên kết chéo với DNA → gián đoạn sao chép → chết tế bào</p>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">4. Cellular Response &amp; Drug Resistance (Câu 15–21)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="15">
+           <li>Sau khi DNA bị tổn thương, tế bào kích hoạt những cơ chế sửa chữa nào?</li>
+           <li>Các con đường tín hiệu (signaling pathways) nào tham gia vào phản ứng với cisplatin?</li>
+           <li>Tại sao tế bào ung thư có thể chết sau khi bị tổn thương DNA?</li>
+           <li>Cisplatin resistance là gì?</li>
+           <li>Những cơ chế nào khiến tế bào ung thư kháng cisplatin?</li>
+           <li>Vai trò của DNA repair mechanisms trong kháng thuốc là gì?</li>
+           <li>Các thay đổi trong vận chuyển thuốc vào/ra tế bào ảnh hưởng thế nào đến hiệu quả điều trị?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">5. Side Effects &amp; Improvements (Câu 22–28)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="22">
+           <li>Những tác dụng phụ chính của cisplatin là gì?</li>
+           <li>Tại sao cisplatin có thể gây nephrotoxicity (độc tính với thận)?</li>
+           <li>Những tác dụng phụ khác như neurotoxicity hoặc hearing loss xảy ra như thế nào?</li>
+           <li>Những thuốc platinum nào được phát triển dựa trên cisplatin?</li>
+           <li>Carboplatin và oxaliplatin khác cisplatin như thế nào?</li>
+           <li>Các chiến lược nào được nghiên cứu để giảm độc tính của cisplatin?</li>
+           <li>Tại sao liệu pháp kết hợp (combination therapy) thường được sử dụng với cisplatin?</li>
+          </ol>
+         </div>
+        </div>
+       </div><!-- Nhóm 4: Những quan niệm sai lầm -->
+       <div class="border-l-4 border-[#d4af37] bg-[#fdf8e8] rounded-r-lg p-4">
+        <h3 class="font-semibold text-[#8b7315] mb-3 text-lg">🎯 Nhóm 4 – LẮNG: Những Quan niệm Sai lầm về Ung thư</h3>
+        <div class="space-y-4 text-sm text-[#444]">
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">1. Bối cảnh &amp; Vấn đề nghiên cứu (Câu 1–3)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+           <li>Người dân hiểu đúng về ung thư đến mức nào?</li>
+           <li>Những quan niệm sai lầm nào phổ biến nhất?</li>
+           <li>Những hiểu lầm này ảnh hưởng thế nào đến việc phòng và điều trị ung thư?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">2. Thực trạng nhận thức (Câu 4–6)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="4">
+           <li>Người dân thường biết thông tin về ung thư từ đâu?</li>
+           <li>Mức độ hiểu biết của cộng đồng về nguyên nhân và điều trị ung thư như thế nào?</li>
+           <li>Những yếu tố nào ảnh hưởng đến nhận thức về ung thư (tuổi, trình độ học vấn, truyền thông)?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">3. Những quan niệm sai lầm cụ thể (Câu 7–20)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="7">
+           <li><strong>Ung thư là "án tử hình":</strong> Người dân có nghĩ rằng ung thư không thể chữa khỏi không? Họ có biết tầm quan trọng của phát hiện sớm không?</li>
+           <li><strong>Ung thư lây nhiễm:</strong> Bao nhiêu người cho rằng ung thư có thể lây từ người sang người?</li>
+           <li><strong>Ăn đường làm ung thư phát triển:</strong> Người dân có thay đổi chế độ ăn vì sợ "nuôi tế bào ung thư" không?</li>
+           <li><strong>Không nên phẫu thuật:</strong> Người dân có sợ phẫu thuật khi điều trị ung thư không? Tại sao?</li>
+           <li><strong>Không nên hóa trị/xạ trị:</strong> Những tác dụng phụ nào khiến bệnh nhân từ chối điều trị?</li>
+           <li><strong>Quan niệm dân gian khác:</strong> Người bệnh ung thư không nên đến đám tang hay phải ăn chay — các quan niệm này có cơ sở khoa học không?</li>
+           <li><strong>Di truyền &amp; thực phẩm chức năng:</strong> Bao nhiêu % ung thư liên quan đến di truyền? Các sản phẩm quảng cáo có bằng chứng khoa học không?</li>
+           <li><strong>Tự điều trị bằng thuốc nam:</strong> Hậu quả của việc tự điều trị không khoa học là gì?</li>
+           <li><strong>Đánh giá mức độ phổ biến:</strong> Nhóm tuổi nào hay có những quan niệm sai lầm này?</li>
+           <li><strong>Nguồn gốc của sai lầm:</strong> Thông tin sai lệch trên internet, truyền miệng, thiếu giáo dục y tế — yếu tố nào quan trọng nhất?</li>
+          </ol>
+         </div>
+         <div>
+          <h4 class="font-medium text-[#1a5632] mb-2">4. Hậu quả &amp; Giải pháp (Câu 17–20)</h4>
+          <ol class="list-decimal list-inside space-y-1 ml-2" start="17">
+           <li>Những quan niệm sai lầm có khiến người bệnh trì hoãn điều trị không?</li>
+           <li>Các phương pháp điều trị không khoa học gây hậu quả gì?</li>
+           <li>Làm thế nào để cung cấp thông tin chính xác về ung thư cho cộng đồng?</li>
+           <li>Vai trò của truyền thông y tế, giáo dục sức khỏe và các chương trình tầm soát là gì?</li>
+          </ol>
+         </div>
+         <div class="bg-white rounded-lg p-3 border border-[#e8ddb0]">
+          <p class="text-xs italic font-medium text-[#8b7315]">💡 Mục tiêu: Xác định &amp; đánh giá mức độ phổ biến của những quan niệm sai lầm trong cộng đồng, từ đó đề xuất các biện pháp nâng cao nhận thức khoa học.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section><!-- Section VI -->
+     <section id="s6" class="section-card p-6 fade-in stagger-6"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">VI</span> Đánh giá</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-6"><!-- 1. Rubric Hoạt động nhóm -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-4"><i data-lucide="users" class="w-5 h-5"></i> 1. RUBRIC ĐÁNH GIÁ HOẠT ĐỘNG NHÓM (Nghiên cứu &amp; Thuyết trình)</h3>
+        <div class="overflow-x-auto mb-4">
+         <table class="w-full text-xs border-collapse">
+          <thead>
+           <tr class="bg-[#1a5632] text-white">
+            <th class="px-3 py-2 text-left rounded-tl">Tiêu chí</th>
+            <th class="px-3 py-2 text-center">Xuất sắc (9–10)</th>
+            <th class="px-3 py-2 text-center">Tốt (7–8)</th>
+            <th class="px-3 py-2 text-center">Đạt (5–6)</th>
+            <th class="px-3 py-2 text-center rounded-tr">Chưa đạt (&lt;5)</th>
+            <th class="px-3 py-2 text-center font-bold">Điểm</th>
+           </tr>
+          </thead>
+          <tbody class="text-[#444]">
+           <tr class="border-b border-[#e8e4dc]">
+            <td class="px-3 py-2 font-medium">Nội dung kiến thức</td>
+            <td class="px-3 py-2 text-center text-xs">Chính xác, đầy đủ, có mở rộng</td>
+            <td class="px-3 py-2 text-center text-xs">Đúng, khá đầy đủ</td>
+            <td class="px-3 py-2 text-center text-xs">Còn thiếu ý</td>
+            <td class="px-3 py-2 text-center text-xs">Sai hoặc rất thiếu</td>
+            <td class="px-3 py-2 text-center font-bold">3</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc] bg-[#faf8f4]">
+            <td class="px-3 py-2 font-medium">Hiểu vấn đề</td>
+            <td class="px-3 py-2 text-center text-xs">Phân tích sâu, có liên hệ thực tế</td>
+            <td class="px-3 py-2 text-center text-xs">Có phân tích</td>
+            <td class="px-3 py-2 text-center text-xs">Chủ yếu mô tả</td>
+            <td class="px-3 py-2 text-center text-xs">Không hiểu rõ</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc]">
+            <td class="px-3 py-2 font-medium">Kỹ năng trình bày</td>
+            <td class="px-3 py-2 text-center text-xs">Rõ ràng, tự tin, logic</td>
+            <td class="px-3 py-2 text-center text-xs">Khá rõ</td>
+            <td class="px-3 py-2 text-center text-xs">Còn lúng túng</td>
+            <td class="px-3 py-2 text-center text-xs">Khó hiểu</td>
+            <td class="px-3 py-2 text-center font-bold">1.5</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc] bg-[#faf8f4]">
+            <td class="px-3 py-2 font-medium">Sử dụng phương tiện</td>
+            <td class="px-3 py-2 text-center text-xs">Slide đẹp, hình ảnh phù hợp</td>
+            <td class="px-3 py-2 text-center text-xs">Có minh họa</td>
+            <td class="px-3 py-2 text-center text-xs">Ít trực quan</td>
+            <td class="px-3 py-2 text-center text-xs">Không có</td>
+            <td class="px-3 py-2 text-center font-bold">1</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc]">
+            <td class="px-3 py-2 font-medium">Làm việc nhóm</td>
+            <td class="px-3 py-2 text-center text-xs">Phối hợp tốt, phân công rõ</td>
+            <td class="px-3 py-2 text-center text-xs">Có phối hợp</td>
+            <td class="px-3 py-2 text-center text-xs">Chưa đều</td>
+            <td class="px-3 py-2 text-center text-xs">Thiếu hợp tác</td>
+            <td class="px-3 py-2 text-center font-bold">1</td>
+           </tr>
+           <tr class="bg-[#faf8f4]">
+            <td class="px-3 py-2 font-medium">Trả lời câu hỏi</td>
+            <td class="px-3 py-2 text-center text-xs">Trả lời tốt, lập luận chặt</td>
+            <td class="px-3 py-2 text-center text-xs">Trả lời được</td>
+            <td class="px-3 py-2 text-center text-xs">Trả lời yếu</td>
+            <td class="px-3 py-2 text-center text-xs">Không trả lời</td>
+            <td class="px-3 py-2 text-center font-bold">1.5</td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-[#d0e5d6]">
+         <p class="text-xs text-[#1a5632] font-semibold">👉 Tổng điểm tối đa: <span class="text-lg font-bold text-[#1a5632]">10 điểm</span></p>
+        </div>
+       </div><!-- 2. Rubric Thảo luận -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-4"><i data-lucide="message-circle-2" class="w-5 h-5"></i> 2. RUBRIC ĐÁNH GIÁ HOẠT ĐỘNG THẢO LUẬN</h3>
+        <p class="text-sm text-[#444] mb-3"><strong>📌 Áp dụng cho:</strong> Quan niệm sai lầm, câu hỏi mở</p>
+        <div class="overflow-x-auto">
+         <table class="w-full text-xs border-collapse">
+          <thead>
+           <tr class="bg-[#8b7315] text-white">
+            <th class="px-3 py-2 text-left rounded-tl">Tiêu chí</th>
+            <th class="px-3 py-2 text-center">Mô tả</th>
+            <th class="px-3 py-2 text-center rounded-tr">Điểm</th>
+           </tr>
+          </thead>
+          <tbody class="text-[#444]">
+           <tr class="border-b border-[#e8ddb0]">
+            <td class="px-3 py-2 font-medium">Tham gia thảo luận</td>
+            <td class="px-3 py-2">Tích cực phát biểu, đóng góp ý kiến</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8ddb0] bg-[#fdf8e8]">
+            <td class="px-3 py-2 font-medium">Chất lượng ý kiến</td>
+            <td class="px-3 py-2">Có lập luận, dẫn chứng rõ ràng</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8ddb0]">
+            <td class="px-3 py-2 font-medium">Tư duy phản biện</td>
+            <td class="px-3 py-2">Biết đặt câu hỏi, phản biện xây dựng</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8ddb0] bg-[#fdf8e8]">
+            <td class="px-3 py-2 font-medium">Hợp tác nhóm</td>
+            <td class="px-3 py-2">Lắng nghe, tôn trọng người khác</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="bg-[#fdf8e8]">
+            <td class="px-3 py-2 font-medium">Kết luận vấn đề</td>
+            <td class="px-3 py-2">Tổng hợp ý chính, rút ra bài học</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-[#e8ddb0] mt-4">
+         <p class="text-xs text-[#8b7315] font-semibold">👉 Tổng điểm tối đa: <span class="text-lg font-bold text-[#8b7315]">10 điểm</span></p>
+        </div>
+       </div><!-- 3. Rubric Sản phẩm dự án -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-4"><i data-lucide="presentation" class="w-5 h-5"></i> 3. RUBRIC ĐÁNH GIÁ SẢN PHẨM (Poster/Video/Slide)</h3>
+        <div class="overflow-x-auto">
+         <table class="w-full text-xs border-collapse">
+          <thead>
+           <tr class="bg-[#1a5632] text-white">
+            <th class="px-3 py-2 text-left rounded-tl">Tiêu chí</th>
+            <th class="px-3 py-2 text-center">Xuất sắc</th>
+            <th class="px-3 py-2 text-center">Tốt</th>
+            <th class="px-3 py-2 text-center">Đạt</th>
+            <th class="px-3 py-2 text-center">Chưa đạt</th>
+            <th class="px-3 py-2 text-center rounded-tr">Điểm</th>
+           </tr>
+          </thead>
+          <tbody class="text-[#444]">
+           <tr class="border-b border-[#e8e4dc]">
+            <td class="px-3 py-2 font-medium">Nội dung khoa học</td>
+            <td class="px-3 py-2 text-center text-xs">Chính xác, có chiều sâu</td>
+            <td class="px-3 py-2 text-center text-xs">Đúng</td>
+            <td class="px-3 py-2 text-center text-xs">Cơ bản</td>
+            <td class="px-3 py-2 text-center text-xs">Sai</td>
+            <td class="px-3 py-2 text-center font-bold">3</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc] bg-[#faf8f4]">
+            <td class="px-3 py-2 font-medium">Tính sáng tạo</td>
+            <td class="px-3 py-2 text-center text-xs">Rất sáng tạo</td>
+            <td class="px-3 py-2 text-center text-xs">Khá</td>
+            <td class="px-3 py-2 text-center text-xs">Bình thường</td>
+            <td class="px-3 py-2 text-center text-xs">Không</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc]">
+            <td class="px-3 py-2 font-medium">Thiết kế &amp; bố cục</td>
+            <td class="px-3 py-2 text-center text-xs">Đẹp, rõ ràng</td>
+            <td class="px-3 py-2 text-center text-xs">Khá</td>
+            <td class="px-3 py-2 text-center text-xs">Đơn giản</td>
+            <td class="px-3 py-2 text-center text-xs">Rối</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8e4dc] bg-[#faf8f4]">
+            <td class="px-3 py-2 font-medium">Thông điệp</td>
+            <td class="px-3 py-2 text-center text-xs">Rõ ràng, ý nghĩa</td>
+            <td class="px-3 py-2 text-center text-xs">Có</td>
+            <td class="px-3 py-2 text-center text-xs">Chưa rõ</td>
+            <td class="px-3 py-2 text-center text-xs">Không</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="bg-[#faf8f4]">
+            <td class="px-3 py-2 font-medium">Ứng dụng &amp; liên hệ</td>
+            <td class="px-3 py-2 text-center text-xs">Gắn thực tế tốt</td>
+            <td class="px-3 py-2 text-center text-xs">Có liên hệ</td>
+            <td class="px-3 py-2 text-center text-xs">Ít liên hệ</td>
+            <td class="px-3 py-2 text-center text-xs">Không</td>
+            <td class="px-3 py-2 text-center font-bold">1</td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-[#d0e5d6] mt-4">
+         <p class="text-xs text-[#1a5632] font-semibold">👉 Tổng điểm tối đa: <span class="text-lg font-bold text-[#1a5632]">10 điểm</span></p>
+        </div>
+       </div><!-- 4. Rubric Công tác xã hội -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-3"><i data-lucide="heart-handshake" class="w-5 h-5"></i> 4. RUBRIC CÔNG TÁC XÃ HỘI</h3>
+        <p class="text-sm text-[#444] mb-3"><strong>🎯 Hoạt động:</strong> Tuyên truyền, gây quỹ, chia sẻ thông tin đúng về sức khỏe</p>
+        <div class="overflow-x-auto">
+         <table class="w-full text-xs border-collapse">
+          <thead>
+           <tr class="bg-[#8b7315] text-white">
+            <th class="px-3 py-2 text-left rounded-tl">Tiêu chí</th>
+            <th class="px-3 py-2 text-center">Xuất sắc (9–10)</th>
+            <th class="px-3 py-2 text-center">Tốt (7–8)</th>
+            <th class="px-3 py-2 text-center">Đạt (5–6)</th>
+            <th class="px-3 py-2 text-center rounded-tr">Chưa đạt (&lt;5)</th>
+            <th class="px-3 py-2 text-center font-bold">Điểm</th>
+           </tr>
+          </thead>
+          <tbody class="text-[#444]">
+           <tr class="border-b border-[#e8ddb0]">
+            <td class="px-3 py-2 font-medium">Ý nghĩa xã hội</td>
+            <td class="px-3 py-2 text-center text-xs">Tác động rõ ràng</td>
+            <td class="px-3 py-2 text-center text-xs">Có ý nghĩa</td>
+            <td class="px-3 py-2 text-center text-xs">Ít rõ</td>
+            <td class="px-3 py-2 text-center text-xs">Không rõ</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8ddb0] bg-[#fdf8e8]">
+            <td class="px-3 py-2 font-medium">Nội dung tuyên truyền</td>
+            <td class="px-3 py-2 text-center text-xs">Chính xác, dễ hiểu</td>
+            <td class="px-3 py-2 text-center text-xs">Khá đúng</td>
+            <td class="px-3 py-2 text-center text-xs">Còn thiếu</td>
+            <td class="px-3 py-2 text-center text-xs">Sai</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8ddb0]">
+            <td class="px-3 py-2 font-medium">Hình thức triển khai</td>
+            <td class="px-3 py-2 text-center text-xs">Sáng tạo, hấp dẫn</td>
+            <td class="px-3 py-2 text-center text-xs">Khá</td>
+            <td class="px-3 py-2 text-center text-xs">Đơn giản</td>
+            <td class="px-3 py-2 text-center text-xs">Chưa hấp dẫn</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="border-b border-[#e8ddb0] bg-[#fdf8e8]">
+            <td class="px-3 py-2 font-medium">Mức độ tham gia</td>
+            <td class="px-3 py-2 text-center text-xs">Tích cực, đầy đủ</td>
+            <td class="px-3 py-2 text-center text-xs">Khá</td>
+            <td class="px-3 py-2 text-center text-xs">Ít</td>
+            <td class="px-3 py-2 text-center text-xs">Thụ động</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+           <tr class="bg-[#fdf8e8]">
+            <td class="px-3 py-2 font-medium">Hiệu quả lan tỏa</td>
+            <td class="px-3 py-2 text-center text-xs">Có phản hồi rõ ràng</td>
+            <td class="px-3 py-2 text-center text-xs">Có tác động</td>
+            <td class="px-3 py-2 text-center text-xs">Ít</td>
+            <td class="px-3 py-2 text-center text-xs">Không</td>
+            <td class="px-3 py-2 text-center font-bold">2</td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-[#e8ddb0] mt-4">
+         <p class="text-xs text-[#8b7315] font-semibold">👉 Tổng điểm tối đa: <span class="text-lg font-bold text-[#8b7315]">10 điểm</span></p>
+        </div>
+       </div><!-- 5. Phân bổ điểm tổng -->
+       <div class="rounded-xl bg-gradient-to-r from-[#0f3d1e] to-[#1a5632] text-white p-5">
+        <h3 class="font-semibold text-lg flex items-center gap-2 mb-4"><i data-lucide="calculator" class="w-5 h-5"></i> 5. PHÂN BỔ ĐIỂM TỔNG</h3>
+        <div class="grid sm:grid-cols-2 gap-3">
+         <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+          <p class="font-semibold mb-3 text-sm">📋 Thành phần đánh giá:</p>
+          <ul class="space-y-2 text-xs">
+           <li class="flex justify-between"><span>1. Nghiên cứu + Thuyết trình</span> <strong>40%</strong></li>
+           <li class="flex justify-between"><span>2. Thảo luận</span> <strong>20%</strong></li>
+           <li class="flex justify-between"><span>3. Sản phẩm dự án</span> <strong>20%</strong></li>
+           <li class="flex justify-between"><span>4. Công tác xã hội</span> <strong>20%</strong></li>
+          </ul>
+          <div class="mt-4 pt-4 border-t border-white/30">
+           <p class="text-xs italic">💡 <strong>Tổng:</strong> (10 × 0.4) + (10 × 0.2) + (10 × 0.2) + (10 × 0.2) = 10/10</p>
+          </div>
+         </div>
+         <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+          <p class="font-semibold mb-3 text-sm">📊 Quy đổi thang 10:</p>
+          <ul class="space-y-1 text-xs">
+           <li class="flex justify-between"><span>9–10:</span> <strong>Xuất sắc (A)</strong></li>
+           <li class="flex justify-between"><span>7–8.9:</span> <strong>Tốt (B)</strong></li>
+           <li class="flex justify-between"><span>5–6.9:</span> <strong>Đạt (C)</strong></li>
+           <li class="flex justify-between"><span>&lt;5:</span> <strong>Chưa đạt (D)</strong></li>
+          </ul>
+          <div class="mt-4 pt-4 border-t border-white/30">
+           <p class="text-xs italic">👉 Mỗi học sinh được đánh giá riêng dựa trên đóng góp cá nhân, thảo luận &amp; sản phẩm chung</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section><!-- Section VII -->
+     <section id="s7" class="section-card p-6 fade-in stagger-7"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">VII</span> Lưu ý</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-6"><!-- 1. Content accuracy -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-3"><i data-lucide="book-check" class="w-5 h-5"></i> 1. Lưu ý về Nội dung Kiến thức</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Đảm bảo thông tin chính xác, khoa học:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Tránh lan truyền quan niệm sai lầm:</strong>
+           <ul class="list-circle list-inside space-y-1 mt-1 ml-4 text-xs">
+            <li>Ung thư không phải lúc nào cũng "án tử hình"</li>
+            <li>Không phải bệnh lây nhiễm được</li>
+            <li>Nhấn mạnh tầm quan trọng của <strong>phát hiện sớm</strong> trong điều trị thành công</li>
+           </ul></li>
+          <li><strong>Về chế độ ăn &amp; lối sống:</strong> Nhấn mạnh vai trò của lối sống lành mạnh trong <strong>phòng ngừa</strong> ung thư (tránh thuốc lá, rượu, ăn uống cân bằng, tập luyện)</li>
+          <li><strong>Về thuốc điều trị (cisplatin):</strong> Chỉ cần học sinh hiểu cơ chế cơ bản, tránh quá chuyên sâu gây quá tải. Trọng tâm là <strong>DNA crosslink → chết tế bào ung thư</strong></li>
+          <li><strong>Khuyến khích:</strong> Sử dụng tài liệu từ WHO, Bộ Y tế Việt Nam, các bệnh viện uy tín để đảm bảo độ tin cậy</li>
+         </ul>
+        </div>
+       </div><!-- 2. Student psychology -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-3"><i data-lucide="heart" class="w-5 h-5"></i> 2. Lưu ý về Tâm lý Học sinh</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Chủ đề ung thư có thể gây:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>Lo lắng, sợ hãi về bệnh tật</li>
+          <li>Liên hệ cá nhân: có người thân mắc bệnh</li>
+          <li>Cảm xúc buồn, áp lực tâm lý</li>
+         </ul>
+         <p class="pt-2"><strong>👉 Giáo viên cần:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>Trình bày theo hướng <strong>khoa học – tích cực – hy vọng</strong></li>
+          <li><strong>Tránh gây hoang mang:</strong> Nhấn mạnh "ung thư có thể phòng ngừa &amp; điều trị"</li>
+          <li><strong>Tôn trọng cảm xúc học sinh:</strong> Nếu học sinh có phản ứng mạnh, xử lý riêng một cách tươi mới và hỗ trợ</li>
+          <li>Tạo không khí lớp học <strong>an toàn &amp; tin tưởng</strong></li>
+         </ul>
+        </div>
+       </div><!-- 3. Group organization -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-3"><i data-lucide="users" class="w-5 h-5"></i> 3. Lưu ý về Tổ chức Hoạt động Nhóm</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Phân công rõ ràng &amp; cụ thể:</strong></p>
+         <div class="bg-white rounded-lg p-3 space-y-2">
+          <p class="text-xs"><strong>Gán vai trò cho từng thành viên:</strong></p>
+          <ul class="list-disc list-inside space-y-1 text-xs ml-2">
+           <li>Người tìm tài liệu &amp; tổng hợp</li>
+           <li>Người thiết kế slide/poster</li>
+           <li>Người thuyết trình chính &amp; người phụ</li>
+           <li>Người quản lý thời gian &amp; liên lạc</li>
+          </ul>
+         </div>
+         <p class="pt-2"><strong>👉 Đảm bảo tất cả thành viên tham gia:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Theo dõi định kỳ:</strong> Hỏi các thành viên nhóm (không chỉ nhóm trưởng) về tiến độ</li>
+          <li><strong>Tránh tình trạng:</strong> 1–2 học sinh làm hết, các bạn khác thụ động</li>
+          <li><strong>Cộng điểm thêm:</strong> Cho thành viên tích cực, trừ điểm cho người không tham gia</li>
+         </ul>
+        </div>
+       </div><!-- 4. Time management -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-3"><i data-lucide="clock" class="w-5 h-5"></i> 4. Lưu ý về Quản lý Thời gian</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Chia thời gian hợp lý trong tiết học:</strong></p>
+         <div class="bg-white rounded-lg p-3">
+          <div class="space-y-2 text-xs">
+           <p class="flex justify-between"><span>📍 Khởi động &amp; giải thích:</span> <strong>5 phút</strong></p>
+           <p class="flex justify-between"><span>📍 Nhóm 1 thuyết trình:</span> <strong>8 phút</strong></p>
+           <p class="flex justify-between"><span>📍 Nhóm 2 thuyết trình:</span> <strong>8 phút</strong></p>
+           <p class="flex justify-between"><span>📍 Nhóm 3 thuyết trình:</span> <strong>8 phút</strong></p>
+           <p class="flex justify-between"><span>📍 Nhóm 4 thuyết trình:</span> <strong>8 phút</strong></p>
+           <p class="flex justify-between"><span>📍 Thảo luận &amp; Tóm tắt:</span> <strong>8 phút</strong></p>
+          </div>
+         </div>
+         <p class="pt-2"><strong>👉 Giới hạn thời gian để:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>Tránh lan man, buồn tẻ</li>
+          <li>Đảm bảo tất cả nhóm đều có cơ hội trình bày</li>
+          <li>Có phần thảo luận chung &amp; kết luận</li>
+         </ul>
+        </div>
+       </div><!-- 5. Discussion culture -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-3"><i data-lucide="message-circle-2" class="w-5 h-5"></i> 5. Lưu ý về Thảo luận &amp; Phản biện</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Khuyến khích:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>Học sinh đặt câu hỏi &amp; tò mò</li>
+          <li>Tranh luận có <strong>văn hóa &amp; tôn trọng</strong></li>
+          <li>Chứng minh ý kiến bằng dữ liệu, lập luận logic</li>
+         </ul>
+         <p class="pt-2"><strong>👉 Nhắc nhở:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Không chê bai, công kích cá nhân:</strong> Phản biện ý tưởng, không phản biện người</li>
+          <li><strong>Tôn trọng ý kiến khác biệt:</strong> "Bạn có quan điểm khác, hãy giải thích"</li>
+          <li><strong>Giáo viên là người điều phối:</strong> Dừng thảo luận khi nó trở nên tiêu cực hoặc sai hướng</li>
+         </ul>
+        </div>
+       </div><!-- 6. Assessment -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-3"><i data-lucide="star" class="w-5 h-5"></i> 6. Lưu ý về Đánh giá</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Sử dụng rubric rõ ràng:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>Chia sẻ rubric với học sinh <strong>trước khi bắt đầu dự án</strong> để họ biết tiêu chí đánh giá</li>
+          <li>Rubric giúp đánh giá <strong>công bằng &amp; khách quan</strong></li>
+         </ul>
+         <p class="pt-2"><strong>👉 Kết hợp nhiều hình thức đánh giá:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Giáo viên đánh giá:</strong> Dựa trên rubric (nội dung, kỹ năng, sản phẩm)</li>
+          <li><strong>Tự đánh giá:</strong> Học sinh tự đánh giá mức độ cố gắng &amp; đóng góp của mình</li>
+          <li><strong>Đánh giá chéo:</strong> Các nhóm khác đánh giá nhóm trình bày (trên tiêu chí nhất định)</li>
+         </ul>
+         <p class="pt-2 italic text-xs">→ Giúp đánh giá toàn diện &amp; phát triển kỹ năng tự phê bình của học sinh</p>
+        </div>
+       </div><!-- 7. Community engagement -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-3"><i data-lucide="heart-handshake" class="w-5 h-5"></i> 7. Lưu ý về Hoạt động Công tác Xã hội</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Nội dung tuyên truyền cần đảm bảo:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Chính xác khoa học:</strong> Có nguồn từ WHO, Bộ Y tế, các chuyên gia</li>
+          <li><strong>Dễ hiểu với cộng đồng:</strong> Ngôn ngữ bình dân, tránh thuật ngữ quá chuyên môn</li>
+          <li><strong>Phù hợp địa phương:</strong> Liên hệ tình hình ung thư tại Việt Nam</li>
+         </ul>
+         <p class="pt-2"><strong>👉 Tránh:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>Thông tin sai lệch từ mạng xã hội (TikTok, Facebook chưa kiểm chứng)</li>
+          <li>Quảng bá phương pháp chưa có bằng chứng khoa học (thuốc nam chưa xác nhận, "thần dược"...)</li>
+          <li>Gây hoang mang hoặc kỳ thị người bệnh ung thư</li>
+         </ul>
+         <p class="pt-2"><strong>👉 Khuyến khích:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>Poster, video ngắn, infographic dễ nhớ</li>
+          <li>Thông điệp rõ ràng &amp; có tác động</li>
+          <li>Gắn với thực tế sống của cộng đồng (làng, phường, thành phố)</li>
+         </ul>
+        </div>
+       </div><!-- 8. Technology & sources -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-3"><i data-lucide="search" class="w-5 h-5"></i> 8. Lưu ý về Sử dụng Công nghệ &amp; Tài liệu</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Hướng dẫn học sinh tìm tài liệu:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Nguồn tin đáng tin cậy:</strong> WHO, Bộ Y tế, Bệnh viện Ung bướu, các tạp chí y khoa uy tín</li>
+          <li><strong>Tránh copy nguyên văn:</strong> Học sinh phải tóm tắt, diễn giải bằng lời của mình</li>
+          <li><strong>Trích dẫn đầy đủ:</strong> Ghi rõ nguồn (tên tác giả, năm, link website)</li>
+         </ul>
+         <p class="pt-2"><strong>👉 Slide/Poster nên:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Ít chữ, nhiều ý chính:</strong> 1 slide = 1 ý (tránh chữ nhỏ, quá đông đúc)</li>
+          <li><strong>Có hình ảnh minh họa:</strong> Sơ đồ, biểu đồ, ảnh phù hợp tăng hiểu biết</li>
+          <li><strong>Màu sắc hợp lý:</strong> Dễ đọc, tránh quá nhiều màu gây rối mắt</li>
+          <li><strong>Font chữ lớn:</strong> Dễ nhìn từ xa (ít nhất 18–20px)</li>
+         </ul>
+        </div>
+       </div><!-- 9. Safety & ethics -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-3"><i data-lucide="shield" class="w-5 h-5"></i> 9. Lưu ý về An toàn &amp; Đạo đức</h3>
+        <div class="space-y-3 text-sm text-[#444] ml-2">
+         <p><strong>📌 Không sử dụng:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Hình ảnh gây sốc, nhạy cảm:</strong> Ảnh bệnh nhân tự tử, vết mổ kỳ cục, hoặc gây kinh tởm</li>
+          <li><strong>Thông tin xúc phạm:</strong> Nói xấu, cười nhạo những người mắc bệnh</li>
+         </ul>
+         <p class="pt-2"><strong>👉 Tôn trọng:</strong></p>
+         <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Người bệnh ung thư:</strong> Trình bày với lòng thương, không kỳ thị</li>
+          <li><strong>Các nạn nhân:</strong> Không sử dụng tên thật, hình ảnh riêng tư nếu không có phép</li>
+          <li><strong>Cảm xúc của người khác:</strong> Một số học sinh có người thân mắc bệnh → hạn chế ảnh sốc</li>
+         </ul>
+        </div>
+       </div><!-- 10. Closing lesson -->
+       <div class="rounded-xl bg-gradient-to-r from-[#0f3d1e] to-[#1a5632] text-white p-5">
+        <h3 class="font-semibold text-lg flex items-center gap-2 mb-3"><i data-lucide="target" class="w-5 h-5"></i> 10. Lưu ý Tổng kết Tiết học</h3>
+        <div class="space-y-3 text-sm">
+         <p><strong>👉 Giáo viên cần tóm tắt &amp; nhấn mạnh:</strong></p>
+         <div class="bg-white/10 rounded-lg p-3 space-y-2 backdrop-blur-sm">
+          <p><strong>1️⃣ Kiến thức chính:</strong></p>
+          <ul class="list-disc list-inside text-xs ml-2">
+           <li>Ung thư là bệnh di truyền ở cấp tế bào</li>
+           <li>Nhiều yếu tố nguy cơ có thể kiểm soát được</li>
+           <li>Cisplatin &amp; các thuốc khác giúp điều trị hiệu quả</li>
+          </ul>
+          <p class="pt-2"><strong>2️⃣ Thông điệp trung tâm:</strong></p>
+          <p class="text-xs italic">✨ <strong>"Ung thư có thể phòng ngừa và điều trị hiệu quả nếu phát hiện sớm"</strong></p>
+          <p class="pt-2"><strong>3️⃣ Kỹ năng &amp; phẩm chất:</strong></p>
+          <ul class="list-disc list-inside text-xs ml-2">
+           <li>Tìm kiếm thông tin khoa học chính xác</li>
+           <li>Làm việc nhóm &amp; truyền thông hiệu quả</li>
+           <li>Trách nhiệm với cộng đồng (chia sẻ kiến thức, hỗ trợ người bệnh)</li>
+          </ul>
+          <p class="pt-2"><strong>4️⃣ Gợi ý kết thúc:</strong></p>
+          <ul class="list-disc list-inside text-xs ml-2">
+           <li>Câu hỏi mở: "Bạn sẽ làm gì để phòng ngừa ung thư cho bản thân?"</li>
+           <li>Hoặc: Chia sẻ thông điệp "Chăm sóc sức khỏe = yêu thương bản thân"</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section><!-- Section VIII -->
+     <section id="s8" class="section-card p-6 fade-in stagger-8"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="true"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">VIII</span> Tài liệu tham khảo</h2><i data-lucide="chevron-down" class="chevron-icon rotated w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content open mt-4 space-y-6"><!-- 1. Hóa học – Phức chất -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-4"><i data-lucide="beaker" class="w-5 h-5"></i> 1. Tài liệu Hóa học – Phức chất</h3>
+        <ul class="space-y-3 text-sm text-[#444] ml-2">
+         <li class="flex items-start gap-3"><i data-lucide="book" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Sách giáo khoa Hóa học 12</strong> (Chương trình GDPT 2018) — phần Phức chất, ion phức, liên kết hóa trị trong phức chất.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="book" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Hoàng Nhâm et al. (2000), <em>Hóa vô cơ (Tập 3)</em>, NXB Giáo dục — Lý thuyết trường tinh thể, liên kết trong phức chất.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="book" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>J.D. Lee (1996), <em>Concise Inorganic Chemistry</em>, 5th Edition, Chapman &amp; Hall — Coordination chemistry &amp; bonding.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Wikipedia:</strong> "Coordination compound", "Crystal field theory", "Ligand field theory".</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Khan Academy</strong> — "Transition metals and coordination chemistry" (video &amp; bài viết).</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Chemistry LibreTexts</strong> — "Coordination Chemistry" (tài liệu mở, miễn phí).</span></li>
+        </ul>
+       </div><!-- 2. Tài liệu về Ung thư (Cancer) -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-4"><i data-lucide="heart" class="w-5 h-5"></i> 2. Tài liệu về Ung thư (Cancer)</h3>
+        <ul class="space-y-3 text-sm text-[#444] ml-2">
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span>Sung, H., Ferlay, J., Siegel, R.L. et al. (2021), <em>"Global Cancer Statistics 2020: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries"</em>, CA: A Cancer Journal for Clinicians, 71(3):209–249.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span>Ferlay, J., Colombet, M., Soerjomataram, I. et al. (2021), <em>"Cancer statistics worldwide"</em>, International Journal of Cancer, 149(12).</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>WHO – International Agency for Research on Cancer (IARC):</strong> GLOBOCAN database (https://globocan.iarc.who.int/) — Thống kê ung thư toàn cầu &amp; từng quốc gia.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>WHO</strong> — <em>"Cancer Fact Sheets"</em> — Thông tin chính xác về các loại ung thư phổ biến.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>Wikipedia:</strong> "Cancer", "Oncology", "Chemotherapy".</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>National Cancer Institute (NCI)</strong> — <em>"Cancer Overview"</em> (https://www.cancer.gov/) — Tài liệu đầy đủ &amp; dễ hiểu.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>American Cancer Society</strong> — Thông tin phòng ngừa &amp; điều trị ung thư.</span></li>
+        </ul>
+       </div><!-- 3. Cisplatin &amp; Điều trị ung thư -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-4"><i data-lucide="stethoscope" class="w-5 h-5"></i> 3. Cisplatin &amp; Điều trị Ung thư</h3>
+        <ul class="space-y-3 text-sm text-[#444] ml-2">
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Lê Huy Thạo &amp; cs. (2023), <em>"Hiệu quả phác đồ Vinorelbine–Cisplatin trong ung thư phổi giai đoạn tiến triển tại Bệnh viện K"</em>, Tạp chí Y học Việt Nam, 500(3).</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Phạm Lê Sỹ &amp; cs. (2022), <em>"Hiệu quả hóa xạ trị phối hợp cisplatin trong ung thư vòm họng"</em>, Bệnh viện K, Hà Nội.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Nguyễn Thị Hoài Thương &amp; cs. (2022), <em>"Phác đồ Gemcitabine–Cisplatin trong ung thư vòm mũi họng: Phân tích 50 bệnh nhân"</em>.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Reardon, D.A. &amp; Grant, R. (2006), <em>"Cisplatin in neuro-oncology: The 5th most commonly used chemotherapeutic agent"</em>, Neuro-Oncology, 8(1).</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>Wikipedia:</strong> "Cisplatin", "Platinum-based chemotherapy".</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>PubChem</strong> (https://pubchem.ncbi.nlm.nih.gov/) — <em>"Cisplatin"</em> — Thông tin hóa học, cấu trúc &amp; dữ liệu an toàn.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>DrugBank</strong> — Thông tin chi tiết về thuốc cisplatin &amp; tác dụng phụ.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Bộ Y tế Việt Nam — <em>"Hướng dẫn chẩn đoán &amp; điều trị ung thư"</em> (các phác đồ chứa platinum).</span></li>
+        </ul>
+       </div><!-- 4. Ung thư tại Việt Nam -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-4"><i data-lucide="globe" class="w-5 h-5"></i> 4. Ung thư tại Việt Nam</h3>
+        <ul class="space-y-3 text-sm text-[#444] ml-2">
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>GLOBOCAN 2022 – Vietnam Fact Sheet:</strong> Thống kê ung thư Việt Nam theo loại, giới tính, tuổi (https://globocan.iarc.who.int/app/dashboard).</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>Viện Ung thư Quốc gia Việt Nam</strong> — Báo cáo GLOBOCAN 2022 &amp; các thống kê tình hình ung thư.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>Bộ Y tế Việt Nam</strong> — <em>"Chương trình phòng chống ung thư quốc gia"</em> — Chiến lược &amp; kế hoạch hành động.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span>Tạp chí Y học Việt Nam — Các bài báo về tình hình ung thư &amp; yếu tố nguy cơ tại Việt Nam.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>WHO EMRO – Eastern Mediterranean Region:</strong> Báo cáo về ung thư tại Đông Nam Á.</span></li>
+        </ul>
+       </div><!-- 5. Các thí nghiệm &amp; Mô hình hóa học -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-4"><i data-lucide="flask" class="w-5 h-5"></i> 5. Các Thí nghiệm &amp; Mô hình Hóa học</h3>
+        <ul class="space-y-3 text-sm text-[#444] ml-2">
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>SGK Hóa 12</strong> — Các thí nghiệm định tính phát hiện ion phức, màu sắc phức chất.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>YouTube – Chemistry channels:</strong> "Preparation of complex compounds", "Crystal field theory demonstration".</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span><strong>ChemLab Virtual</strong> — Thí nghiệm ảo tạo &amp; phân tích phức chất.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#1a5632] shrink-0 mt-0.5"></i> <span>Lý Văn Hùng (2019), <em>"Hướng dẫn thực hành Hóa học 12"</em> — Các thí nghiệm &amp; mô hình phức chất.</span></li>
+        </ul>
+       </div><!-- 6. Tài liệu bổ sung &amp; Hỗ trợ -->
+       <div class="rounded-xl border-l-4 border-[#d4af37] bg-gradient-to-r from-[#fdf8e8] to-white p-4">
+        <h3 class="font-semibold text-[#8b7315] text-lg flex items-center gap-2 mb-4"><i data-lucide="lightbulb" class="w-5 h-5"></i> 6. Tài liệu Bổ sung &amp; Hỗ trợ</h3>
+        <ul class="space-y-3 text-sm text-[#444] ml-2">
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>Nghiên cứu y khoa quốc tế:</strong> Pubmed.ncbi.nlm.nih.gov — Tìm kiếm bài báo về cisplatin &amp; ung thư.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>Google Scholar</strong> (https://scholar.google.com/) — Tìm kiếm các tạp chí học thuật về hóa xạ trị &amp; ung thư.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>Coursera, edX, Khan Academy</strong> — Các khóa học trực tuyến về Hóa học Vô Cơ &amp; Sinh học Phân tử.</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="file-text" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>Tài liệu bổ sung Việt Nam:</strong> Sách tham khảo &amp; giáo trình từ các trường Đại học (ĐHNN HN, ĐHSP HN, Đại học Y Hà Nội).</span></li>
+         <li class="flex items-start gap-3"><i data-lucide="globe" class="w-4 h-4 text-[#8b7315] shrink-0 mt-0.5"></i> <span><strong>YouTube – Giáo dục Hóa học:</strong> Channels về Hóa học 12, phức chất, &amp; ứng dụng.</span></li>
+        </ul>
+       </div><!-- 7. Ghi chú quan trọng -->
+       <div class="rounded-xl bg-gradient-to-r from-[#0f3d1e] to-[#1a5632] text-white p-5">
+        <h3 class="font-semibold text-lg flex items-center gap-2 mb-3"><i data-lucide="alert-circle" class="w-5 h-5"></i> 📌 Ghi chú quan trọng</h3>
+        <div class="space-y-3 text-sm">
+         <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
+          <p class="font-semibold mb-2">1️⃣ Nguồn tin đáng tin cậy:</p>
+          <ul class="list-disc list-inside text-xs space-y-1 ml-2">
+           <li>WHO, IARC – GLOBOCAN (ung thư quốc tế)</li>
+           <li>Bộ Y tế Việt Nam, Viện Ung thư Quốc gia</li>
+           <li>Các tạp chí y khoa uy tín (Lancet, JAMA, Cancer, etc.)</li>
+           <li>PubMed, Google Scholar (các bài báo học thuật)</li>
+          </ul>
+         </div>
+         <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
+          <p class="font-semibold mb-2">2️⃣ Tránh sử dụng:</p>
+          <ul class="list-disc list-inside text-xs space-y-1 ml-2">
+           <li>Thông tin từ mạng xã hội chưa kiểm chứng (TikTok, Facebook)</li>
+           <li>Quảng cáo sản phẩm "chữa ung thư" không có bằng chứng</li>
+           <li>Thông tin sai lệch hoặc bị cô lập ngữ cảnh</li>
+          </ul>
+         </div>
+         <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
+          <p class="font-semibold mb-2">3️⃣ Cách trích dẫn:</p>
+          <ul class="list-disc list-inside text-xs space-y-1 ml-2">
+           <li>Ghi rõ tên tác giả, năm xuất bản, tên tạp chí/sách</li>
+           <li>Sử dụng định dạng APA hoặc Harvard</li>
+           <li>Có liên kết đến tài liệu gốc nếu có thể</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section><!-- Section IX -->
+     <section id="s9" class="section-card p-6 fade-in stagger-8"><button class="section-toggle w-full flex items-between justify-between text-left" aria-expanded="false"> <h2 class="font-heading text-[#1a5632] text-xl md:text-2xl font-700 flex items-center gap-3"><span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1a5632] text-white text-sm font-bold font-body">IX</span> Phụ lục</h2><i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[#1a5632] shrink-0 mt-1"></i> </button>
+      <div class="collapsible-content mt-4 space-y-6"><!-- Phụ lục A: Survey Form -->
+       <div class="rounded-xl border-l-4 border-[#1a5632] bg-gradient-to-r from-[#f0f7f2] to-white p-4">
+        <h3 class="font-semibold text-[#1a5632] text-lg flex items-center gap-2 mb-4"><i data-lucide="file-text" class="w-5 h-5"></i> Phụ lục A: Phiếu Khảo sát Mức độ Hiểu biết về Ung thư</h3>
+        <div class="bg-white rounded-lg p-4 border border-[#d0e5d6]">
+         <div class="space-y-4 text-xs text-[#444]">
+          <!-- Title -->
+          <div class="bg-[#1a5632] text-white rounded p-3">
+           <p class="font-bold text-sm text-center">📋 PHIẾU KHẢO SÁT MỨC ĐỘ HIỂU BIẾT VỀ UNG THƯ TRONG CỘNG ĐỒNG</p>
+          </div><!-- Introduction -->
+          <div class="italic text-xs text-[#666]">
+           <p>Khảo sát này được thực hiện nhằm tìm hiểu mức độ nhận thức của học sinh Trường THPT Nguyễn Khuyến về bệnh ung thư và các quan niệm liên quan. Rất mong bạn tham gia trả lời. <strong>Xin chân thành cảm ơn!</strong></p>
+          </div><!-- Section 1: Personal Info -->
+          <div class="border-t border-[#e8e4dc] pt-3">
+           <p class="font-bold text-[#1a5632] mb-3">I. THÔNG TIN CÁ NHÂN *</p>
+           <div class="space-y-3 ml-3">
+            <div>
+             <label class="font-semibold text-[#1a5632] text-xs">Họ và tên *</label>
+             <p class="text-xs text-[#999] mt-1">_____________________________________________________________</p>
+            </div>
+            <div>
+             <label class="font-semibold text-[#1a5632] text-xs">Lớp *</label>
+             <p class="text-xs text-[#999] mt-1">_____________________________________________________________</p>
+            </div>
+           </div>
+          </div><!-- Section 2: Main Questions -->
+          <div class="border-t border-[#e8e4dc] pt-3">
+           <p class="font-bold text-[#1a5632] mb-3">II. CÂU HỎI KHẢO SÁT</p>
+           <div class="space-y-4 ml-3">
+            <!-- Q1 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#1a5632]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">1. Bạn thường biết thông tin về ung thư từ đâu? *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Khoa học, y tế (từ sách, bác sĩ, chuyên gia)</p>
+              <p>☐ Truyền thông, mạng xã hội (TikTok, Facebook, YouTube)</p>
+              <p>☐ Người thân, bạn bè, người bệnh</p>
+              <p>☐ Mục khác: _____________________________</p>
+             </div>
+            </div><!-- Q2 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#d4af37]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">2. Theo bạn, ung thư có thể chữa khỏi không? *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Có thể chữa khỏi</p>
+              <p>☐ Không thể chữa khỏi</p>
+              <p>☐ Không chắc chắn</p>
+             </div>
+            </div><!-- Q3 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#1a5632]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">3. Ung thư là "án tử hình" *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Đúng</p>
+              <p>☐ Sai</p>
+              <p>☐ Không rõ</p>
+             </div>
+            </div><!-- Q4 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#d4af37]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">4. Ung thư có thể lây từ người sang người *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Đúng</p>
+              <p>☐ Sai</p>
+              <p>☐ Không rõ</p>
+             </div>
+            </div><!-- Q5 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#1a5632]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">5. Thực hiện phẫu thuật sẽ làm ung thư lan nhanh hơn *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Đúng</p>
+              <p>☐ Sai</p>
+              <p>☐ Không rõ</p>
+             </div>
+            </div><!-- Q6 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#d4af37]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">6. Hóa trị hay xạ trị làm giảm sức khỏe của người mắc ung thư *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Đúng</p>
+              <p>☐ Sai</p>
+              <p>☐ Không rõ</p>
+             </div>
+            </div><!-- Q7 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#1a5632]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">7. Người mắc ung thư nên kiêng nhiều loại thực phẩm như: đường, thịt đỏ, sữa, trứng,... *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Đúng</p>
+              <p>☐ Sai</p>
+              <p>☐ Không rõ</p>
+             </div>
+            </div><!-- Q8 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#d4af37]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">8. Bệnh ung thư gây ra do di truyền *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Đúng (gần như 100% do di truyền)</p>
+              <p>☐ Sai (hầu hết do yếu tố môi trường &amp; lối sống)</p>
+              <p>☐ Không rõ</p>
+             </div>
+            </div><!-- Q9 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#1a5632]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">9. Nên chữa bệnh ung thư bằng thuốc Nam *</p>
+             <div class="space-y-1 ml-3">
+              <p>☐ Đúng (thuốc Nam an toàn, không tác dụng phụ)</p>
+              <p>☐ Sai (nên sử dụng phương pháp y học hiện đại được chứng minh)</p>
+              <p>☐ Không rõ</p>
+             </div>
+            </div><!-- Q10 -->
+            <div class="bg-[#faf8f4] rounded p-3 border-l-2 border-[#d4af37]">
+             <p class="font-semibold text-[#1a5632] text-xs mb-2">10. Bạn đánh giá mức độ hiểu biết của mình về ung thư *</p>
+             <p class="text-xs text-[#666] italic mb-2">(1 = Rất ít, gần như không biết | 5 = Rất hiểu rõ)</p>
+             <div class="flex items-center gap-2 ml-3">
+              <span class="text-xs">Rất ít (1)</span>
+              <div class="flex gap-1">
+               <button class="w-6 h-6 border border-[#1a5632] rounded hover:bg-[#1a5632] hover:text-white text-xs">1</button> <button class="w-6 h-6 border border-[#1a5632] rounded hover:bg-[#1a5632] hover:text-white text-xs">2</button> <button class="w-6 h-6 border border-[#1a5632] rounded hover:bg-[#1a5632] hover:text-white text-xs">3</button> <button class="w-6 h-6 border border-[#1a5632] rounded hover:bg-[#1a5632] hover:text-white text-xs">4</button> <button class="w-6 h-6 border border-[#1a5632] rounded hover:bg-[#1a5632] hover:text-white text-xs">5</button>
+              </div><span class="text-xs">Rất hiểu rõ (5)</span>
+             </div>
+            </div>
+           </div>
+          </div><!-- Footer -->
+          <div class="bg-[#1a5632] text-white rounded p-3 mt-4">
+           <p class="text-xs italic text-center">💡 <strong>Cảm ơn bạn đã tham gia khảo sát!</strong><br>
+             Dữ liệu này giúp chúng tôi hiểu rõ hơn nhận thức cộng đồng về ung thư và những quan niệm sai lầm phổ biến. Thông tin của bạn sẽ được giữ kín và chỉ dùng cho mục đích giáo dục.</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+   </div><!-- Footer -->
+   <footer class="w-full bg-[#0f3d1e] text-white/60 text-center py-6 px-4 text-sm font-body">
+    <p>Giáo án dự án Hóa học — Ứng dụng Phức chất © 2025</p>
+   </footer>
+  </div>
+  <script>
+    // Element SDK
+    const defaultConfig = {
+      project_title: 'DỰ ÁN HÓA HỌC: "LẮNG" — Ứng dụng Phức chất',
+      background_color: '#f7f5f0',
+      surface_color: '#ffffff',
+      text_color: '#2d2d2d',
+      primary_color: '#1a5632',
+      accent_color: '#d4af37',
+      font_family: 'Playfair Display',
+      font_size: 16
+    };
+
+    function applyConfig(config) {
+      const bg = config.background_color || defaultConfig.background_color;
+      const surface = config.surface_color || defaultConfig.surface_color;
+      const text = config.text_color || defaultConfig.text_color;
+      const primary = config.primary_color || defaultConfig.primary_color;
+      const accent = config.accent_color || defaultConfig.accent_color;
+      const font = config.font_family || defaultConfig.font_family;
+      const size = config.font_size || defaultConfig.font_size;
+
+      document.body.style.backgroundColor = bg;
+      document.body.style.color = text;
+
+      document.querySelectorAll('.section-card').forEach(el => {
+        el.style.backgroundColor = surface;
+        el.style.borderLeftColor = primary;
+      });
+
+      document.querySelectorAll('.font-heading').forEach(el => {
+        el.style.fontFamily = `${font}, Georgia, serif`;
+      });
+
+      document.querySelectorAll('h2.font-heading, h3').forEach(el => {
+        if (el.classList.contains('font-heading')) el.style.color = primary;
+      });
+
+      document.querySelectorAll('.font-body, body').forEach(el => {
+        el.style.fontSize = `${size}px`;
+      });
+
+      // Number badges
+      document.querySelectorAll('.rounded-full.bg-\\[\\#1a5632\\]').forEach(el => {
+        el.style.backgroundColor = primary;
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => applyConfig(config),
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+            { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+            { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+            { get: () => config.primary_color || defaultConfig.primary_color, set: (v) => { config.primary_color = v; window.elementSdk.setConfig({ primary_color: v }); } },
+            { get: () => config.accent_color || defaultConfig.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['project_title', config.project_title || defaultConfig.project_title]
+        ])
+      });
+    }
+
+    // Collapsible sections
+    document.querySelectorAll('.section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.chevron-icon');
+        const isOpen = content.classList.contains('open');
+        content.classList.toggle('open');
+        icon.classList.toggle('rotated');
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+
+    // Active TOC highlight
+    const sections = document.querySelectorAll('section[id]');
+    const tocLinks = document.querySelectorAll('#toc-list a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`#toc-list a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(s => observer.observe(s));
+
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9eb3bb8191809f91',t:'MTc3NjAxMjY1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
